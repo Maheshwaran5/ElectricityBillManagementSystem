@@ -9,9 +9,12 @@
 </head>
 <body>
 	<div id="table root">
-		<table>
+		<table border ="2" width="100%" cellpadding="2" >
+	
 			<thead>
 				<tr>
+				
+					<th>Customer Id</th>
 					<th>Customer Name</th>
 					<th>Mobile Number</th>
 					<th>Aadhaar Number</th>
@@ -26,19 +29,20 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="meterbox" items="${allmeterbox}">
+				<c:forEach var="customer" items="${allcustomer}">
 					<tr>
-						<td>${meterbox.customerName}</td>
-						<td>${meterbox.mobileNumber}</td>
-						<td>${meterbox.aadhaarNumber}</td>
-						<td>${meterbox.accountNumber}</td>
-						<td>${meterbox.meterId}</td>
-						<td>${meterbox.depositAmount}</td>
-						<td>${meterbox.advanceAmount}</td>
-						<td>${meterbox.address}</td>
-						<td>${meterbox.state}</td>
-						<td>${meterbox.country}</td>
-						<td>${meterbox.pinCode}</td>
+						<td>${customer.customerId}</td>
+						<td>${customer.customerName}</td>
+						<td>${customer.mobileNumber}</td>
+						<td>${customer.aadhaarNumber}</td>
+						<td>${customer.accountNumber}</td>
+						<td>${customer.meterId}</td>
+						<td>${customer.depositAmount}</td>
+						<td>${customer.advanceAmount}</td>
+						<td>${customer.address}</td>
+						<td>${customer.state}</td>
+						<td>${customer.country}</td>
+						<td>${customer.pinCode}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

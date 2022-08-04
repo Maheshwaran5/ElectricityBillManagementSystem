@@ -13,24 +13,24 @@ import com.chainsys.elecricitybillmanagement.repository.CustomerRepository;
 @Service
 public class CustomerService {
 	@Autowired
-	private CustomerRepository repo;
+	private CustomerRepository customerRepository;
 
 	public List<Customer> getCustomer() {
-		List<Customer> listCd = repo.findAll();
+		List<Customer> listCd = customerRepository.findAll();
 		return listCd;
 	}
 
 	@Transactional
-	public Customer save(Customer cd) {
-		return repo.save(cd);
+	public Customer save(Customer c) {
+		return customerRepository.save(c);
 	}
 
-	public Customer findByid(int id) {
-		return repo.findById(id);
+	public Customer findById(int id) {
+		return customerRepository.findById(id);
 	}
 
 	@Transactional
 	public void deleteById(int id) {
-		repo.deleteById(id);
+		customerRepository.deleteById(id);
 	}
 }

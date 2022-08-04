@@ -4,7 +4,10 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -60,5 +63,17 @@ public class BillDetails {
 
 	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
+	}
+	
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="accountNumber",nullable = false,insertable = false,updatable = false)
+	private MeterboxInformation customer;
+
+	public MeterboxInformation getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(MeterboxInformation customer) {
+		this.customer = customer;
 	}
 }

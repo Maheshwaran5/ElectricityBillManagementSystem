@@ -8,32 +8,47 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.chainsys.elecricitybillmanagement.dto.MeterboxInformationCustomerDTO;
+import com.chainsys.elecricitybillmanagement.model.Customer;
 import com.chainsys.elecricitybillmanagement.model.MeterboxInformation;
-import com.chainsys.elecricitybillmanagement.repository.MaterboxInformationRepository;
+import com.chainsys.elecricitybillmanagement.repository.CustomerRepository;
+import com.chainsys.elecricitybillmanagement.repository.MeterboxInformationRepository;
 
 
 
 @Service
 public class MeterboxInformationService {
     @Autowired
-    private MaterboxInformationRepository mbi;
+    private MeterboxInformationRepository meterboxInformationRepository;
+    
+    @Autowired
+    private CustomerRepository customerRepository;
 
     public List<MeterboxInformation> getMeterboxInformation() {
-        List<MeterboxInformation> listMi = mbi.findAll();
+        List<MeterboxInformation> listMi = meterboxInformationRepository.findAll();
         return listMi;
     }
     @Transactional
     public MeterboxInformation save(MeterboxInformation mi)
     {
-        return mbi.save(mi);
+        return meterboxInformationRepository.save(mi);
     }
-    public MeterboxInformation findByid(int id)
+    public MeterboxInformation findById(int id)
     {
-        return mbi.findById(id);
+        return meterboxInformationRepository.findById(id);
     }
     @Transactional
     public void deleteById(int id)
     {
-    	mbi.deleteById(id);
+    	meterboxInformationRepository.deleteById(id);
+    }
+    
+    public MeterboxInformationCustomerDTO getmeterboxInformationCustomerDTO(int id) {
+        MeterboxInformation meterboxInformation = findById(id);
+        MeterboxInformationCustomerDTO dto = new MeterboxInformationCustomerDTO();
+        dto.setMeterboxInfo(meterboxInformation);
+        Customer customer = customerRepository.findByMeterId(id);
+        dto.setCustomer(customer);
+        return dto;
     }
 }

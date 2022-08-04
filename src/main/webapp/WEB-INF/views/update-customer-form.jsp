@@ -6,12 +6,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Customer</title>
+<title>Update MeterboxInformation</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="add" method="post" modelAttribute="addcustomer">
+			<form:form action="update" method="post"
+				modelAttribute="updatethecustomer">
 				<div>
 					<label for="customerId">Customer Id </label>
 					<div>
@@ -19,7 +20,7 @@
 					</div>
 				</div>
 				<div>
-					<label for="customerName">Customer Name</label>
+					<label for="customerName">Customer Name </label>
 					<div>
 						<form:input path="customerName" />
 					</div>
@@ -30,6 +31,7 @@
 						<form:input path="mobileNumber" />
 					</div>
 				</div>
+
 				<div>
 					<label for="aadhaarNumber">Aadhaar Number</label>
 					<div>
@@ -44,13 +46,13 @@
 					</div>
 				</div>
 
+
 				<div>
-					<label for="meterId">meterId</label>
+					<label for="meterId">Meter Id</label>
 					<div>
 						<form:input path="meterId" />
 					</div>
 				</div>
-
 
 				<div>
 					<label for="depositAmount">Deposit Amount</label>
@@ -59,12 +61,15 @@
 					</div>
 				</div>
 
+
+
 				<div>
 					<label for="advanceAmount">Advance Amount</label>
 					<div>
 						<form:input path="advanceAmount" />
 					</div>
 				</div>
+
 				<div>
 					<label for="address">Address</label>
 					<div>
@@ -72,22 +77,25 @@
 					</div>
 				</div>
 
-				<label for="state">State</label>
 				<div>
-					<form:input path="state" />
+					<label for="state">State</label>
+					<div>
+						<form:input path="state" />
+					</div>
 				</div>
 
-				<label for="country">Country</label>
 				<div>
-					<form:input path="country" />
+					<label for="country">Country</label>
+					<div>
+						<form:input path="country" />
+					</div>
 				</div>
+
 				<div>
-					<label for="pinCode">Pincode</label>
+					<label for="pinCode">PinCode</label>
 					<div>
 						<form:input path="pinCode" />
 					</div>
-
-
 				</div>
 				<div>
 					<form:button>Add New</form:button>

@@ -13,24 +13,24 @@ import com.chainsys.elecricitybillmanagement.repository.BillDetailsRepository;
 @Service
 public class BillDetailsService {
 	@Autowired
-	private BillDetailsRepository repo;
+	private BillDetailsRepository billDetailsRepository;
 
 	public List<BillDetails> getBillDetails() {
-		List<BillDetails> listBd = repo.findAll();
+		List<BillDetails> listBd = billDetailsRepository.findAll();
 		return listBd;
 	}
 
 	@Transactional
 	public BillDetails save(BillDetails bd) {
-		return repo.save(bd);
+		return billDetailsRepository.save(bd);
 	}
 
-	public BillDetails findByid(int id) {
-		return repo.findById(id);
+	public BillDetails findById(int id) {
+		return billDetailsRepository.findById(id);
 	}
 
 	@Transactional
 	public void deleteById(int id) {
-		repo.deleteById(id);
+		billDetailsRepository.deleteById(id);
 	}
 }

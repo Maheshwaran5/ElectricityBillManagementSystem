@@ -8,7 +8,7 @@ import com.chainsys.elecricitybillmanagement.model.MeterboxInformation;
 
 
 
-public interface MaterboxInformationRepository extends CrudRepository<MeterboxInformation,Integer>{
+public interface MeterboxInformationRepository extends CrudRepository<MeterboxInformation,Integer>{
 	MeterboxInformation findById(int id);
 	MeterboxInformation save(MeterboxInformation mi);
     void deleteById(int id);

@@ -13,24 +13,24 @@ import com.chainsys.elecricitybillmanagement.repository.BillPaymentRepository;
 @Service
 public class BillPaymentService {
 	@Autowired
-	private BillPaymentRepository repo;
+	private BillPaymentRepository billPaymentRepository;
 
 	public List<BillPayment> getBillPayment() {
-		List<BillPayment> listBp = repo.findAll();
+		List<BillPayment> listBp = billPaymentRepository.findAll();
 		return listBp;
 	}
 
 	@Transactional
 	public BillPayment save(BillPayment bp) {
-		return repo.save(bp);
+		return billPaymentRepository.save(bp);
 	}
 
-	public BillPayment findByid(int id) {
-		return repo.findById(id);
+	public BillPayment findById(int id) {
+		return billPaymentRepository.findById(id);
 	}
 
 	@Transactional
 	public void deleteById(int id) {
-		repo.deleteById(id);
+		billPaymentRepository.deleteById(id);
 	}
 }
