@@ -14,8 +14,6 @@ import com.chainsys.elecricitybillmanagement.model.MeterboxInformation;
 import com.chainsys.elecricitybillmanagement.repository.CustomerRepository;
 import com.chainsys.elecricitybillmanagement.repository.MeterboxInformationRepository;
 
-
-
 @Service
 public class MeterboxInformationService {
     @Autowired
@@ -28,22 +26,21 @@ public class MeterboxInformationService {
         List<MeterboxInformation> listMi = meterboxInformationRepository.findAll();
         return listMi;
     }
-    @Transactional
     public MeterboxInformation save(MeterboxInformation mi)
     {
         return meterboxInformationRepository.save(mi);
     }
-    public MeterboxInformation findById(int id)
+    public MeterboxInformation findById(long id)
     {
         return meterboxInformationRepository.findById(id);
     }
-    @Transactional
-    public void deleteById(int id)
+  
+    public void deleteById(long id)
     {
     	meterboxInformationRepository.deleteById(id);
     }
-    
-    public MeterboxInformationCustomerDTO getmeterboxInformationCustomerDTO(int id) {
+    @Transactional
+    public MeterboxInformationCustomerDTO getmeterboxInformationCustomerDTO(long id) {
         MeterboxInformation meterboxInformation = findById(id);
         MeterboxInformationCustomerDTO dto = new MeterboxInformationCustomerDTO();
         dto.setMeterboxInfo(meterboxInformation);

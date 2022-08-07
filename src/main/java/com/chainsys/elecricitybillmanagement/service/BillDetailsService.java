@@ -20,16 +20,14 @@ public class BillDetailsService {
 		return listBd;
 	}
 
-	@Transactional
 	public BillDetails save(BillDetails bd) {
 		return billDetailsRepository.save(bd);
 	}
 
 	public BillDetails findById(int id) {
-		return billDetailsRepository.findById(id);
+		return billDetailsRepository.findBybillId(id);
 	}
 
-	@Transactional
 	public void deleteById(int id) {
 		billDetailsRepository.deleteById(id);
 	}

@@ -20,7 +20,6 @@ public class BillPaymentService {
 		return listBp;
 	}
 
-	@Transactional
 	public BillPayment save(BillPayment bp) {
 		return billPaymentRepository.save(bp);
 	}
@@ -29,7 +28,7 @@ public class BillPaymentService {
 		return billPaymentRepository.findById(id);
 	}
 
-	@Transactional
+//	@Transactional
 	public void deleteById(int id) {
 		billPaymentRepository.deleteById(id);
 	}

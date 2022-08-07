@@ -6,13 +6,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Bill Details</title>
+<title>Get Bill ID Payment</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="update" method="post"
-				modelAttribute="updatethebilldetails">
+			<form:form action="" method="get" modelAttribute="fetchPaymentByBillDetails">
 				<div>
 					<label for="billId">Bill Id </label>
 					<div>
@@ -20,7 +19,7 @@
 					</div>
 				</div>
 				<div>
-					<label for="bill_Date">Bill Date </label>
+					<label for="billDate">Bill Date</label>
 					<div>
 						<form:input path="billDate" />
 					</div>
@@ -31,7 +30,6 @@
 						<form:input path="billAmount" />
 					</div>
 				</div>
-
 				<div>
 					<label for="unitConsumed">Unit Consumed</label>
 					<div>
@@ -43,15 +41,39 @@
 					<label for="accountNumber">Account Number</label>
 					<div>
 						<form:input path="accountNumber" />
-					</div>
-				</div>
-
-
-				<div>
-					<form:button>Add New</form:button>
-				</div>
+						</div>
+						</div>
 			</form:form>
 		</div>
+		<div id="form">
+			<form:form action="" method="get" modelAttribute="fetchBillByPayment">
+				<div>
+					<label for="paymentId">Payment Id </label>
+					<div>
+						<form:input path="paymentId" />
+					</div>
+				</div>
+				<div>
+					<label for="paymentDate">Payment Date</label>
+					<div>
+						<form:input path="paymentDate" />
+					</div>
+				</div>
+				<div>
+					<label for="billId">Bill Id</label>
+					<div>
+						<form:input path="billId" />
+					</div>
+				</div>
+				<div>
+					<label for="paidAmount">Paid Amount</label>
+					<div>
+						<form:input path="paidAmount" />
+					</div>
+				</div>
+				</form:form>
+		</div>
 	</div>
+		
 </body>
 </html>

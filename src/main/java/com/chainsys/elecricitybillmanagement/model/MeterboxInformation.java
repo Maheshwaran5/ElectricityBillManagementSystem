@@ -8,27 +8,50 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "meterbox_information")
 public class MeterboxInformation {
 	@Id
 	@Column(name = "meter_id")
-	private int meterId;
+	private long meterId;
+
+	public long getMeterId() {
+		return meterId;
+	}
+
+	public void setMeterId(long meterId) {
+		this.meterId = meterId;
+	}
+
 	@Column(name = "meter_type")
+	@NotNull(message = "Meter Type shouldn't be null")
+
 	private String meterType;
+
 	@Column(name = "phase_code")
+	@NotNull(message = "Phase_code shouldn't be null")
 	private String phaseCode;
+
 	@Column(name = "bill_type")
+	@NotNull(message = "Bill type shouldn't be null")
 	private String billType;
+
 	@Column(name = "due_date")
+	@NotNull(message = "Due Date shouldn't be null")
 	private Date dueDate;
+
 	@Column(name = "meter_rent")
+	@Min(value=1 , message ="Id above meter_rent 1")
 	private int meterRent;
+
 	@Column(name = "gst_amount")
+	@Min(value=1 , message ="Id above gst_amount 1")
 	private double gstAmount;
 
-	@OneToOne(mappedBy = "meterboxInformation",fetch=FetchType.LAZY)
+	@OneToOne(mappedBy = "meterboxInformation", fetch = FetchType.LAZY)
 	private Customer customer;
 
 	public Customer getCustomer() {
@@ -37,14 +60,6 @@ public class MeterboxInformation {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
-	}
-
-	public int getMeterId() {
-		return meterId;
-	}
-
-	public void setMeterId(int meterId) {
-		this.meterId = meterId;
 	}
 
 	public String getMeterType() {

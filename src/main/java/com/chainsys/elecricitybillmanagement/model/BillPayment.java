@@ -13,10 +13,13 @@ public class BillPayment {
 	@Id
 	@Column(name = "payment_id")
 	private int paymentId;
+	
 	@Column(name = "payment_date")
 	private Date paymentDate;
+	
 	@Column(name = "bill_Id")
 	private int billId;
+	
 	@Column(name = "paid_amount")
 	private long paidAmount;
 

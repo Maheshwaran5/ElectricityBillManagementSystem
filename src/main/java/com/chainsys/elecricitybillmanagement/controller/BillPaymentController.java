@@ -21,6 +21,8 @@ import com.chainsys.elecricitybillmanagement.service.BillPaymentService;
 public class BillPaymentController {
 	@Autowired
 	BillPaymentService billPaymentService;
+	@Autowired
+	BillDetailsService billDetailService;
 
 	@GetMapping("/list")
 	public String getAllBillPayment(Model model) {
@@ -60,5 +62,12 @@ public class BillPaymentController {
 		billPaymentService.deleteById(id);
 		return "redirect:/billpayment/list";
 	}
+	@GetMapping("/getbillidpayment")
+    public String getBillIdPayment(@RequestParam("id")int id, Model model) {
+        BillPayment thebill = billPaymentService.findById(id);
+        model.addAttribute("fetchBillByPayment", thebill);
+        model.addAttribute("fetchPaymentByBillDetails",billDetailService.findById(thebill.getBillId()));
+        return "find-billid-payment";
+    }
 }
 

@@ -38,10 +38,6 @@
 						<form:input path="paidAmount" />
 					</div>
 				</div>
-
-
-
-
 				<div>
 					<form:button>Add New</form:button>
 				</div>

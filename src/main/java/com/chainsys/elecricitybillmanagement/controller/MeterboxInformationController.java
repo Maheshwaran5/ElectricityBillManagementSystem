@@ -41,8 +41,14 @@ public class MeterboxInformationController {
 		return "redirect:/meterbox/list";
 	}
 
+	@GetMapping("/getmeterid")
+	public String getmeterid(@RequestParam("id")long id, Model model) {
+		MeterboxInformation meter = meterboxInformationService.findById(id);
+		model.addAttribute("getmeter",meter);
+		return "get-meterbox-form";
+	}
 	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("id") int id, Model model) {
+	public String showUpdateForm(@RequestParam("id") long id, Model model) {
 		MeterboxInformation themeterbox = meterboxInformationService.findById(id);
 		model.addAttribute("updatethemeterbox", themeterbox);
 		return "update-meterbox-form";
@@ -55,13 +61,14 @@ public class MeterboxInformationController {
 	}
 
 	@GetMapping("/deletethemeterbox")
-	public String deleteMeterboxInformation(@RequestParam("meterId") int id) {
+	public String deleteMeterboxInformation(@RequestParam("meterId") long id) {
 		meterboxInformationService.deleteById(id);
 		return "redirect:/meterbox/list";
 	}
 
 	@GetMapping("/getcustomer")
-	public String getMeterboxInformationCustomer(@RequestParam("id") int id, Model model) {
+	public String getMeterboxInformationCustomer(@RequestParam("meterId") long id, Model model) {
+		System.out.println("id "+id);
 		MeterboxInformationCustomerDTO dto = meterboxInformationService.getmeterboxInformationCustomerDTO(id);
 		model.addAttribute("getmeterboxinformation", dto.getMeterboxInfo());
 		model.addAttribute("getcustomer", dto.getCustomer());

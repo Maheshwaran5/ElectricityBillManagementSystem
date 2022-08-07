@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.elecricitybillmanagement.model.BillDetails;
-import com.chainsys.elecricitybillmanagement.model.BillPayment;
 
 public interface BillDetailsRepository extends CrudRepository<BillDetails,Integer>{
-	BillDetails findById(int id);
-	BillDetails save(BillDetails bd);
+	BillDetails save(BillDetails billDetails);
     void deleteById(int id);
     List <BillDetails> findAll();
+	BillDetails findByAccountNumber(long id);
+	BillDetails findBybillId(int id);
 }

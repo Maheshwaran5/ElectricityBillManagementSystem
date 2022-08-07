@@ -1,0 +1,64 @@
+CREATE TABLE meterbox_information (
+    meter_id NUMBER NOT NULL,
+    meter_type VARCHAR2(50) NOT NULL,
+    phase_code Number NOT NULL,  
+    bill_type VARCHAR2 (50) NOT NULL,
+    due_date DATE NOT NULL,
+    meter_rent Number NOT NULL,
+    gst_amount NUMBER NOT NULL,  
+    
+    PRIMARY KEY (meter_id)
+);
+
+---------------------------------------------------------------------------------------------------
+
+CREATE TABLE customer (
+    id int NOT NULL UNIQUE,
+    customer_name VARCHAR2(50) NOT NULL,
+    password varchar(255) not null,
+    mobile_number NUMBER NOT NULL,
+    address VARCHAR2(50) NOT NULL,
+    state VARCHAR2(50) NOT NULL,
+    country VARCHAR2(50) NOT NULL,
+    pincode NUMBER NOT NULL,
+    meter_id NUMBER NOT NULL,
+    aadhaar_number  NUMBER NOT NULL,
+    account_number NUMBER NOT NULL,
+    deposit_amount NUMBER NOT NULL,
+    advance_amount NUMBER NOT NULL,
+    
+     PRIMARY KEY (account_number),
+     FOREIGN KEY (meter_id) REFERENCES meterbox_information(meter_id)
+);
+
+
+---------------------------------------------------------------------------------------------------
+
+
+CREATE TABLE bill_details (
+    bill_Id NUMBER NOT NULL,
+    bill_Date DATE  NOT NULL,
+    bill_Amount NUMBER NOT NULL,
+    unit_Consumed NUMBER NOT NULL,
+    account_Number NUMBER(16) NOT NULL,
+    PRIMARY KEY (bill_Id),
+     FOREIGN KEY (account_Number) REFERENCES customer(account_Number)
+);
+
+
+
+---------------------------------------------------------------------------------------------------
+
+
+
+CREATE TABLE bill_payment (
+    payment_id NUMBER NOT NULL,
+    payment_date DATE  NOT NULL,
+    bill_Id NUMBER NOT NULL,
+    paid_amount NUMBER NOT NULL,
+    PRIMARY KEY (payment_id),
+     FOREIGN KEY (bill_Id) REFERENCES bill_details(bill_Id)
+);
+
+
+---------------------------------------------------------------------------------------------------

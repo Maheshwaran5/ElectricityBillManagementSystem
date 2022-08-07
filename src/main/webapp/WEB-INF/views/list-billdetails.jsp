@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div id="table root">
-		<table>
+		<table border ="2" width="100%" cellpadding="2">
 			<thead>
 				<tr>
 					<th>Bill Id</th>
@@ -24,7 +24,7 @@
 				<c:forEach var="billdetails" items="${allbilldetails}">
 					<tr>
 						<td>${billdetails.billId}</td>
-						<td>${billdetails.bill_Date}</td>
+						<td>${billdetails.billDate}</td>
 						<td>${billdetails.billAmount}</td>
 						<td>${billdetails.unitConsumed}</td>
 						<td>${billdetails.accountNumber}</td>

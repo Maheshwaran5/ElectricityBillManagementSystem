@@ -14,31 +14,49 @@ import javax.persistence.Table;
 @Table(name="bill_details")
 public class BillDetails {
 	@Id
-	@Column(name = "bill_Id")
+	@Column(name = "BILL_ID")
 	private int billId;
-	@Column(name = "bill_Date")
-	private Date bill_Date;
-	@Column(name = "billAmount")
+	
+	@Column(name = "BILL_DATE")
+	private Date billDate;
+	
+	public Date getBillDate() {
+		return billDate;
+	}
+
+	public void setBillDate(Date billDate) {
+		this.billDate = billDate;
+	}
+
+	@Column(name = "BILL_AMOUNT")
 	private long billAmount;
-	@Column(name = "unitConsumed")
+	
+	@Column(name = "UNIT_CONSUMED")
 	private long unitConsumed;
-	@Column(name = "accountNumber")
+	
+	@Column(name = "ACCOUNT_NUMBER")
 	private long accountNumber;
+	
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="account_Number",nullable = false,insertable = false,updatable = false)
+	private Customer customer;
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 
 	public int getBillId() {
 		return billId;
 	}
 
+
+
 	public void setBillId(int billId) {
 		this.billId = billId;
-	}
-
-	public Date getBill_Date() {
-		return bill_Date;
-	}
-
-	public void setBill_Date(Date bill_Date) {
-		this.bill_Date = bill_Date;
 	}
 
 	public long getBillAmount() {
@@ -65,15 +83,5 @@ public class BillDetails {
 		this.accountNumber = accountNumber;
 	}
 	
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="accountNumber",nullable = false,insertable = false,updatable = false)
-	private MeterboxInformation customer;
-
-	public MeterboxInformation getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(MeterboxInformation customer) {
-		this.customer = customer;
-	}
+	
 }

@@ -25,73 +25,79 @@
 					</div>
 				</div>
 				<div>
-					<label for="mobileNumber">Mobile Number</label>
+					<label for="password">Password</label>
 					<div>
-						<form:input path="mobileNumber" />
+						<form:input path="password" />
 					</div>
-				</div>
-				<div>
-					<label for="aadhaarNumber">Aadhaar Number</label>
 					<div>
-						<form:input path="aadhaarNumber" />
+						<label for="mobileNumber">Mobile Number</label>
+						<div>
+							<form:input path="mobileNumber" />
+						</div>
 					</div>
-				</div>
-
-				<div>
-					<label for="accountNumber">Account Number</label>
 					<div>
-						<form:input path="accountNumber" />
+						<label for="aadhaarNumber">Aadhaar Number</label>
+						<div>
+							<form:input path="aadhaarNumber" />
+						</div>
 					</div>
-				</div>
 
-				<div>
-					<label for="meterId">meterId</label>
 					<div>
-						<form:input path="meterId" />
+						<label for="accountNumber">Account Number</label>
+						<div>
+							<form:input path="accountNumber" />
+						</div>
 					</div>
-				</div>
 
-
-				<div>
-					<label for="depositAmount">Deposit Amount</label>
 					<div>
-						<form:input path="depositAmount" />
-					</div>
-				</div>
-
-				<div>
-					<label for="advanceAmount">Advance Amount</label>
-					<div>
-						<form:input path="advanceAmount" />
-					</div>
-				</div>
-				<div>
-					<label for="address">Address</label>
-					<div>
-						<form:input path="address" />
-					</div>
-				</div>
-
-				<label for="state">State</label>
-				<div>
-					<form:input path="state" />
-				</div>
-
-				<label for="country">Country</label>
-				<div>
-					<form:input path="country" />
-				</div>
-				<div>
-					<label for="pinCode">Pincode</label>
-					<div>
-						<form:input path="pinCode" />
+						<label for="meterId">meterId</label>
+						<div>
+							<form:input path="meterId" />
+						</div>
 					</div>
 
 
-				</div>
-				<div>
-					<form:button>Add New</form:button>
-				</div>
+					<div>
+						<label for="depositAmount">Deposit Amount</label>
+						<div>
+							<form:input path="depositAmount" />
+						</div>
+					</div>
+
+					<div>
+						<label for="advanceAmount">Advance Amount</label>
+						<div>
+							<form:input path="advanceAmount" />
+						</div>
+					</div>
+					<div>
+						<label for="address">Address</label>
+						<div>
+							<form:input path="address" />
+						</div>
+					</div>
+
+					<label for="state">State</label>
+					<div>
+						<form:input path="state" />
+					</div>
+
+					<label for="country">Country</label>
+					<div>
+						<form:input path="country" />
+					</div>
+					<div>
+						<label for="pinCode">Pincode</label>
+						<div>
+							<form:input path="pinCode" />
+						</div>
+
+
+
+					</div>
+					<div>
+						<form:button>Add New</form:button>
+					</div>
 			</form:form>
 		</div>
 	</div>

@@ -10,7 +10,9 @@
 </head>
 <body>
 	<div id="root">
+	
 		<div id="form">
+		
 			<form:form action="add" method="post" modelAttribute="addbilldetails">
 				<div>
 					<label for="billId">Bill Id </label>
@@ -21,7 +23,7 @@
 				<div>
 					<label for="bill_Date">Bill Date</label>
 					<div>
-						<form:input path="bill_Date" />
+						<form:input path="billDate" />
 					</div>
 				</div>
 				<div>

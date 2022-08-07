@@ -16,6 +16,7 @@
 				
 					<th>Customer Id</th>
 					<th>Customer Name</th>
+					<th>Password</th>
 					<th>Mobile Number</th>
 					<th>Aadhaar Number</th>
 					<th>Account Number</th>
@@ -33,6 +34,7 @@
 					<tr>
 						<td>${customer.customerId}</td>
 						<td>${customer.customerName}</td>
+						<td>${customer.password}</td>
 						<td>${customer.mobileNumber}</td>
 						<td>${customer.aadhaarNumber}</td>
 						<td>${customer.accountNumber}</td>
