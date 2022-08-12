@@ -2,7 +2,6 @@ package com.chainsys.elecricitybillmanagement.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +23,8 @@ public class BillDetailsService {
 		return billDetailsRepository.save(bd);
 	}
 
-	public BillDetails findById(int id) {
-		return billDetailsRepository.findBybillId(id);
+	public BillDetails findById(long id) {
+		return billDetailsRepository.findByAccountNumber(id);
 	}
 
 	public void deleteById(int id) {

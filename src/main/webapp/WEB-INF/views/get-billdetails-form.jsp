@@ -6,25 +6,25 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Update Bill Details</title>
+<title>Get Bill Details</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="update" method="post"
-				modelAttribute="updatethebilldetails">
+			<form:form action="" method="get" modelAttribute="getbilldetails">
 				<div>
-					<label for="billId">Bill Id </label>
+					<label for="billId">Bill Id</label>
 					<div>
 						<form:input path="billId" />
 					</div>
 				</div>
 				<div>
-					<label for="bill_Date">Bill Date </label>
+					<label for="billDate">Bill Date</label>
 					<div>
 						<form:input path="billDate" />
 					</div>
 				</div>
+
 				<div>
 					<label for="billAmount">Bill Amount</label>
 					<div>
@@ -39,6 +39,7 @@
 					</div>
 				</div>
 
+
 				<div>
 					<label for="accountNumber">Account Number</label>
 					<div>
@@ -47,9 +48,6 @@
 				</div>
 
 
-				<div>
-					<form:button>Add New</form:button>
-				</div>
 			</form:form>
 		</div>
 	</div>

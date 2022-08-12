@@ -2,9 +2,13 @@ package com.chainsys.elecricitybillmanagement.controller;
 
 import java.util.List;
 
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,36 +42,21 @@ public class CustomerController {
 
 	@PostMapping("/add")
 	public String addNewCustomer(@ModelAttribute("addcustomer") Customer thecustomer) {
+		
 		customerService.save(thecustomer);
 		return "redirect:/customer/list";
 		
 	}
 	
-//	@GetMapping("/getcustomerid")
-//	public String getcustomerid(@RequestParam("id")int id, Model model) {
-//		Customer customer = CustomerService.findById(id);
-//		model.addAttribute("getcustomer",customer);
-//		return "get-customer-form";
-//	}
+	@GetMapping("/getcustomerid")
+	public String getcustomerid(@RequestParam("id")long id, Model model) {
+		Customer customer = customerService.findById(id);
+		model.addAttribute("getcustomer",customer);
+		return "get-customer-form";
+	}
 	
-	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("accountno") long id, Model model) {
-		Customer thecustomer = customerService.findById(id);
-		model.addAttribute("updatethecustomer", thecustomer);
-		return "update-customer-form";
-	}
-
-	@PostMapping("/update")
-	public String updateCustomer(@ModelAttribute("updatethecustomer") Customer thecustomer) {
-		customerService.save(thecustomer);
-		return "redirect:/customer/list";
-	}
-
-	@GetMapping("/deletethecustomer")
-	public String deletecustomer(@RequestParam("accountno") int id) {
-		customerService.deleteById(id);
-		return "redirect:/customer/list";
-	}
+	
+	
 
 	@GetMapping("/getbilldetails")
 	public String getCustomerBillDetails(@RequestParam("id") long id, Model model) {
@@ -77,21 +66,26 @@ public class CustomerController {
 		return "customer-billdetails";
 	}
 	
-	@GetMapping("/customerlogin")
+	
+    
+    @GetMapping("/adminlogin")
     public String adminaccessform(Model model) {
         Customer customer = new Customer();
         model.addAttribute("customer", customer);
         return "customer-login";
-    }                   
+	}                 
 
     @PostMapping("/checkcustomerlogin")
     public String checkingAccess(@ModelAttribute("customer") Customer use) {
     	Customer customer = customerService.getCustomernamepassword(use.getCustomerName(), use.getPassword());
         if (customer!= null){
 
-            return "redirect:/index/";
+            return "redirect:/index/customerindex";
         } else
             return "invalid-user-error";
     }
+    
+    
+    
 }
 

@@ -1,20 +1,29 @@
 package com.chainsys.elecricitybillmanagement.model;
 
-import java.util.Date;
+import java.sql.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "meterbox_information")
 public class MeterboxInformation {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "meter_id")
+    @SequenceGenerator(name = "meter_id", sequenceName = "meter_id", allocationSize = 1)
 	@Column(name = "meter_id")
 	private long meterId;
 
@@ -27,29 +36,25 @@ public class MeterboxInformation {
 	}
 
 	@Column(name = "meter_type")
-	@NotNull(message = "Meter Type shouldn't be null")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid  Meter Type")
 
 	private String meterType;
 
 	@Column(name = "phase_code")
-	@NotNull(message = "Phase_code shouldn't be null")
+	@Digits(integer = 6, fraction = 0 )
 	private String phaseCode;
 
 	@Column(name = "bill_type")
-	@NotNull(message = "Bill type shouldn't be null")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid  Meter Type")
 	private String billType;
 
 	@Column(name = "due_date")
-	@NotNull(message = "Due Date shouldn't be null")
 	private Date dueDate;
 
 	@Column(name = "meter_rent")
-	@Min(value=1 , message ="Id above meter_rent 1")
+	@Min(value = 1, message = "Id above meter_rent is not be required ")
+	@Max(value = 5000, message = "Id above meter_rent is not be required ")
 	private int meterRent;
-
-	@Column(name = "gst_amount")
-	@Min(value=1 , message ="Id above gst_amount 1")
-	private double gstAmount;
 
 	@OneToOne(mappedBy = "meterboxInformation", fetch = FetchType.LAZY)
 	private Customer customer;
@@ -102,11 +107,5 @@ public class MeterboxInformation {
 		this.meterRent = meterRent;
 	}
 
-	public double getGstAmount() {
-		return gstAmount;
-	}
-
-	public void setGstAmount(double gstAmount) {
-		this.gstAmount = gstAmount;
-	}
+	
 }

@@ -1,56 +1,79 @@
 package com.chainsys.elecricitybillmanagement.model;
 
 import javax.persistence.Column;
+
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name = "customer")
 public class Customer {
-	
-	@Column(name = "id")
-	private int customerId;
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "customer_id")
+    @SequenceGenerator(name = "customer_id", sequenceName = "customer_id", allocationSize = 1)
 	@Column(name = "account_number")
+	@Digits(integer = 12, fraction = 0, message = "Id above account_number")
 	private long accountNumber;
-	
+
 	@Column(name = "customer_name")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter Valid Customer Name")
 	private String customerName;
-	
+
 	@Column(name = "mobile_number")
+	@Digits(integer = 12, fraction = 0, message = "Id above mobile_number")
 	private long mobileNumber;
-	
+
 	@Column(name = "aadhaar_number")
+	@Digits(integer = 12, fraction = 0, message = "Id above aadhaar_number")
 	private long aadhaarNumber;
-	
+
 	@Column(name = "meter_id")
+	@Digits(integer = 100, fraction = 0, message = "Id above meter_id")
 	private long meterId;
-	
+
 	@Column(name = "deposit_amount")
+	@Range(min = (long) 100.0, message = "Id above deposit_amount")
 	private double depositAmount;
-	
+
 	@Column(name = "advance_amount")
+	@Digits(integer = 12, fraction = 0, message = "Id above advance_amount")
 	private long advanceAmount;
-	
+
 	@Column(name = "address")
+	//@Pattern(regexp = "^[A-Za-z][1-9]", message = "Enter valid  Address")
 	private String address;
-	
+
 	@Column(name = "state")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid  State")
 	private String state;
-	
+
 	@Column(name = "country")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid  Country")
 	private String country;
-	
+
 	@Column(name = "pincode")
+	@Min(value = 1, message = "Id above mobile_number")
 	private int pinCode;
-	
+
 	@Column(name = "password")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid  Password")
 	private String password;
-	
+
 	public String getPassword() {
 		return password;
 	}
@@ -62,10 +85,9 @@ public class Customer {
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "meter_id", nullable = false, insertable = false, updatable = false)
 	private MeterboxInformation meterboxInformation;
-	
+
 	@OneToOne(mappedBy = "customer", fetch = FetchType.LAZY)
 	private BillDetails bill_details;
-
 
 	public long getAccountNumber() {
 		return accountNumber;
@@ -90,15 +112,6 @@ public class Customer {
 	public void setBill_details(BillDetails bill_details) {
 		this.bill_details = bill_details;
 	}
-
-	public int getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
-
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -130,6 +143,7 @@ public class Customer {
 	public void setMeterId(long meterId) {
 		this.meterId = meterId;
 	}
+
 
 	public double getDepositAmount() {
 		return depositAmount;

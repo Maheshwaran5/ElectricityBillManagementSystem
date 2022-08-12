@@ -55,12 +55,6 @@
 					</div>
 				</div>
 				<div>
-					<label for="gstAmount">GST Amount</label>
-					<div>
-						<form:input path="gstAmount" />
-					</div>
-				</div>
-				<div>
 					<form:button>Add New</form:button>
 				</div>
 			</form:form>

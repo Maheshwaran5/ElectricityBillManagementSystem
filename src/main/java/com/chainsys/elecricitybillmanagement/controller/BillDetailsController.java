@@ -2,9 +2,14 @@ package com.chainsys.elecricitybillmanagement.controller;
 
 import java.util.List;
 
+
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.elecricitybillmanagement.model.BillDetails;
+import com.chainsys.elecricitybillmanagement.model.Customer;
+import com.chainsys.elecricitybillmanagement.model.MeterboxInformation;
 import com.chainsys.elecricitybillmanagement.service.BillDetailsService;
 
 @Controller
@@ -36,27 +43,18 @@ public class BillDetailsController {
 
 	@PostMapping("/add")
 	public String addNewBillDetails(@ModelAttribute("addbilldetails") BillDetails thebilldetails) {
-		billDetailsService.save(thebilldetails);
+	billDetailsService.save(thebilldetails);
 		return "redirect:/billdetails/list";	
 	}
 
-	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("bill_detailsId") int id, Model model) {
-		BillDetails thebilldetails = billDetailsService.findById(id);
-		model.addAttribute("updatethebilldetails", thebilldetails);
-		return "update-billdetails-form";
-	}
-
-	@PostMapping("/update")
-	public String updateBillDetails(@ModelAttribute("updatethebilldetails") BillDetails thebilldetails) {
-		billDetailsService.save(thebilldetails);
-		return "redirect:/billdetails/list";
-	}
-
-	@GetMapping("/deletethecustomer")
-	public String deletebilldetails(@RequestParam("customerId") int id) {
-		billDetailsService.deleteById(id);
-		return "redirect:/billdetails/list";
+	
+@GetMapping("/getbilldetailsid")
+	public String getbilldetailsid(@RequestParam("id")long id, Model model) {
+	BillDetails billDetails = billDetailsService.findById(id);
+		model.addAttribute("getbilldetails",billDetails);
+		return "get-billdetails-form";
+	
 	}
 }
+
 

@@ -53,12 +53,6 @@
 						<form:input path="meterRent" />
 					</div>
 				</div>
-				<div>
-					<label for="gstAmount">GST Amount</label>
-					<div>
-						<form:input path="gstAmount" />
-					</div>
-				</div>
 			</form:form>
 		</div>
 	</div>

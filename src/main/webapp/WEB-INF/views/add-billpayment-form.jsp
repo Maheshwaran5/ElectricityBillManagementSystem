@@ -12,30 +12,37 @@
 	<div id="root">
 		<div id="form">
 			<form:form action="add" method="post" modelAttribute="addbillpayment">
+				
 				<div>
 					<label for="paymentId">Payment Id </label>
 					<div>
-						<form:input path="paymentId" />
+						<form:input path="paymentId" placeholder="Enter Payment Id" />
 					</div>
 				</div>
+				<form:errors path="paymentId" class="text-danger" />
 				<div>
-					<label for="paymentDate">Payment Date</label>
+					<label for="paymentDate">Payment Date </label>
+				
 					<div>
-						<form:input path="paymentDate" />
+						<form:input type="date" path="paymentDate"  />
 					</div>
 				</div>
+				
 				<div>
 					<label for="billId">Bill Id</label>
 					<div>
-						<form:input path="billId" />
+						<form:input path="billId" placeholder="Enter Bill Id" />
 					</div>
 				</div>
+				<form:errors path="billId" class="text-danger" />
+			
 				<div>
 					<label for="paidAmount">Paid Amount</label>
 					<div>
 						<form:input path="paidAmount" />
 					</div>
 				</div>
+					<form:errors path="paidAmount" class="text-danger" />
 
 
 

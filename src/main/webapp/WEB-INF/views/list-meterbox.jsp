@@ -19,7 +19,6 @@
 					<th>bill Type</th>
 					<th>Due_Date</th>
 					<th>Meter Rent</th>
-					<th>Gst_Amount</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -31,7 +30,6 @@
 						<td>${meterbox.billType}</td>
 						<td>${meterbox.dueDate}</td>
 						<td>${meterbox.meterRent}</td>
-						<td>${meterbox.gstAmount}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

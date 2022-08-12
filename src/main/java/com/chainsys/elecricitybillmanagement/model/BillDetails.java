@@ -1,6 +1,8 @@
 package com.chainsys.elecricitybillmanagement.model;
 
-import java.util.Date;
+
+import java.sql.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,16 +11,22 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 @Entity
-@Table(name="bill_details")
+@Table(name = "bill_details")
 public class BillDetails {
 	@Id
 	@Column(name = "BILL_ID")
+	@Min(value = 1, message = "Id above billId")
 	private int billId;
-	
+
 	@Column(name = "BILL_DATE")
+
 	private Date billDate;
+
 	
 	public Date getBillDate() {
 		return billDate;
@@ -29,16 +37,16 @@ public class BillDetails {
 	}
 
 	@Column(name = "BILL_AMOUNT")
-	private long billAmount;
-	
+	 private long billAmount;
+
 	@Column(name = "UNIT_CONSUMED")
-	private long unitConsumed;
-	
+	 private long unitConsumed;
+
 	@Column(name = "ACCOUNT_NUMBER")
 	private long accountNumber;
-	
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="account_Number",nullable = false,insertable = false,updatable = false)
+
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "account_Number", nullable = false, insertable = false, updatable = false)
 	private Customer customer;
 
 	public Customer getCustomer() {
@@ -52,8 +60,6 @@ public class BillDetails {
 	public int getBillId() {
 		return billId;
 	}
-
-
 
 	public void setBillId(int billId) {
 		this.billId = billId;
@@ -82,6 +88,5 @@ public class BillDetails {
 	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-	
-	
+
 }

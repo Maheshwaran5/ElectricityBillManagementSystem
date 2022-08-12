@@ -2,9 +2,12 @@ package com.chainsys.elecricitybillmanagement.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.elecricitybillmanagement.model.BillDetails;
 import com.chainsys.elecricitybillmanagement.model.BillPayment;
+import com.chainsys.elecricitybillmanagement.model.Customer;
 import com.chainsys.elecricitybillmanagement.service.BillDetailsService;
 import com.chainsys.elecricitybillmanagement.service.BillPaymentService;
 
@@ -40,28 +44,20 @@ public class BillPaymentController {
 
 	@PostMapping("/add")
 	public String addNewBillDetails(@ModelAttribute("addbillpayment") BillPayment thebillpayment) {
+		
 		billPaymentService.save(thebillpayment);
 		return "redirect:/billpayment/list";	
 	}
-
-	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("bill_paymentId") int id, Model model) {
-		BillPayment thebillPayment = billPaymentService.findById(id);
-		model.addAttribute("updatethebillpayment", thebillPayment);
-		return "update-billpayment-form";
-	}
-
-	@PostMapping("/update")
-	public String updateBillPayment(@ModelAttribute("updatethebillpayment") BillPayment thebillpayment) {
-		billPaymentService.save(thebillpayment);
-		return "redirect:/billpayment/list";
-	}
-
-	@GetMapping("/deletethecustomer")
-	public String deletebilldetails(@RequestParam("bill_paymentId") int id) {
-		billPaymentService.deleteById(id);
-		return "redirect:/billpayment/list";
-	}
+//	@GetMapping("/getbillpaymentid")
+//	public String getbillpaymentid(@RequestParam("id")long id, Model model) {
+//		BillPayment billPayment = billPaymentService.findById(id);
+//		model.addAttribute("getbillpayment",billPayment);
+//		return "get-billpayment-form";
+//	}
+	
+	
+	
+		
 	@GetMapping("/getbillidpayment")
     public String getBillIdPayment(@RequestParam("id")int id, Model model) {
         BillPayment thebill = billPaymentService.findById(id);
@@ -70,4 +66,5 @@ public class BillPaymentController {
         return "find-billid-payment";
     }
 }
+
 

@@ -14,40 +14,45 @@
 		<div id="form">
 		
 			<form:form action="add" method="post" modelAttribute="addbilldetails">
+			
 				<div>
 					<label for="billId">Bill Id </label>
 					<div>
-						<form:input path="billId" />
+						<form:input path="billId" placeholder="Enter Bill Id" />
 					</div>
 				</div>
+				
 				<div>
-					<label for="bill_Date">Bill Date</label>
+					<label for="billDate">Bill Date</label>
 					<div>
-						<form:input path="billDate" />
+						<form:input type="date"  path="billDate"  />
 					</div>
 				</div>
+				
 				<div>
 					<label for="billAmount">Bill Amount</label>
 					<div>
-						<form:input path="billAmount" />
+						<form:input path="billAmount" placeholder="Enter Bill Amount" />
 					</div>
 				</div>
+				
 				<div>
 					<label for="unitConsumed">Unit Consumed</label>
 					<div>
 						<form:input path="unitConsumed" />
 					</div>
 				</div>
+				
 
 				<div>
 					<label for="accountNumber">Account Number</label>
 					<div>
-						<form:input path="accountNumber" />
-
+						<form:input path="accountNumber" placeholder="Enter Account Number" />
 
 					</div>
+					</div>
 
-					<form:button>Add New</form:button>
+					<form:button>Add</form:button>
 				</div>
 			</form:form>
 		</div>
