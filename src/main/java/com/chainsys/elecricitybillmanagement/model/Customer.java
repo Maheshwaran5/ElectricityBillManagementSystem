@@ -24,42 +24,48 @@ import org.hibernate.validator.constraints.Range;
 @Table(name = "customer")
 public class Customer {
 	@Id
+	@Column(name = "account_number")
+	private long accountNumber;
+	
+	
+	@Column(name = "customer_id")
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "customer_id")
     @SequenceGenerator(name = "customer_id", sequenceName = "customer_id", allocationSize = 1)
-	@Column(name = "account_number")
-	@Digits(integer = 12, fraction = 0, message = "Id above account_number")
-	private long accountNumber;
+	private int customerid;
+
+	public int getCustomerid() {
+		return customerid;
+	}
+
+	public void setCustomerid(int customerid) {
+		this.customerid = customerid;
+	}
 
 	@Column(name = "customer_name")
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter Valid Customer Name")
 	private String customerName;
-
+	
 	@Column(name = "mobile_number")
-	@Digits(integer = 12, fraction = 0, message = "Id above mobile_number")
 	private long mobileNumber;
 
 	@Column(name = "aadhaar_number")
-	@Digits(integer = 12, fraction = 0, message = "Id above aadhaar_number")
 	private long aadhaarNumber;
-
+	
+	
 	@Column(name = "meter_id")
-	@Digits(integer = 100, fraction = 0, message = "Id above meter_id")
 	private long meterId;
 
 	@Column(name = "deposit_amount")
-	@Range(min = (long) 100.0, message = "Id above deposit_amount")
 	private double depositAmount;
 
 	@Column(name = "advance_amount")
-	@Digits(integer = 12, fraction = 0, message = "Id above advance_amount")
 	private long advanceAmount;
 
 	@Column(name = "address")
-	//@Pattern(regexp = "^[A-Za-z][1-9]", message = "Enter valid  Address")
 	private String address;
 
 	@Column(name = "state")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid  State")
+	//@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid  State")
 	private String state;
 
 	@Column(name = "country")
@@ -67,11 +73,11 @@ public class Customer {
 	private String country;
 
 	@Column(name = "pincode")
-	@Min(value = 1, message = "Id above mobile_number")
+	//@Min(value = 1, message = "Id above mobile_number")
 	private int pinCode;
 
 	@Column(name = "password")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid  Password")
+	//@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid  Password")
 	private String password;
 
 	public String getPassword() {
@@ -192,5 +198,4 @@ public class Customer {
 	public void setPinCode(int pinCode) {
 		this.pinCode = pinCode;
 	}
-
 }

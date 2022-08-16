@@ -156,26 +156,29 @@ input[type=text]:hover, input[type=password]:hover, label:hover ~ input[type=tex
 </style>
 </head>
 <body>
-	<form:form action="checkcustomerlogin" method="post" modelAttribute="customer">
+	<form:form action="checkcustomerlogin" method="post"
+		modelAttribute="customer">
 		<h1>User Log in</h1>
 		<div class="inset">
 			<p>
-				<label for="name">User name</label> <input type="text" name="path="customerName"
-					id="email">
+				<label for="customerName">User name</label>
+				<form:input type="text" placeholder="Enter your Email"
+					path="customerName" id="email" />
 			</p>
 			<p>
-				<label for="password">PASSWORD</label> <input type="password"
-					name="password" id="password">
-			</p>
-			<p>
-				<input type="checkbox" name="remember" id="remember"> <label
-					for="remember">Remember me for 14 days</label>
+				<label for="password">PASSWORD</label>
+				<form:input path="password" type="password"
+					placeholder="Enter Password" />
 			</p>
 		</div>
 		<p>
 			<input type="submit" name="go" id="go" value="Log in">
 		</p>
+		<br>
+		<div>
+		<h2><a href="/customer/addform">Create New Account</a></h2>
+		</div>
 	</form:form>
-	
+
 </body>
 </html>

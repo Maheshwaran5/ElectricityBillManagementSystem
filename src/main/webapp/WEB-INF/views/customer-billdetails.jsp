@@ -12,12 +12,12 @@
 	<div id="root">
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getcustomer">
-				<div>
+				 <div>
 					<label for="customerId">Customer Id </label>
 					<div>
 						<form:input path="customerId" />
 					</div>
-				</div>
+				</div> 
 				<div>
 					<label for="customerName">Customer Name</label>
 					<div>

@@ -44,7 +44,8 @@ public class CustomerController {
 	public String addNewCustomer(@ModelAttribute("addcustomer") Customer thecustomer) {
 		
 		customerService.save(thecustomer);
-		return "redirect:/customer/list";
+		return "redirect:/customer/customerlogin";
+		
 		
 	}
 	
@@ -68,7 +69,7 @@ public class CustomerController {
 	
 	
     
-    @GetMapping("/adminlogin")
+    @GetMapping("/customerlogin")
     public String adminaccessform(Model model) {
         Customer customer = new Customer();
         model.addAttribute("customer", customer);
@@ -77,7 +78,7 @@ public class CustomerController {
 
     @PostMapping("/checkcustomerlogin")
     public String checkingAccess(@ModelAttribute("customer") Customer use) {
-    	Customer customer = customerService.getCustomernamepassword(use.getCustomerName(), use.getPassword());
+    	Customer customer = customerService.getCustomerNamePassword(use.getCustomerName(), use.getPassword());
         if (customer!= null){
 
             return "redirect:/index/customerindex";

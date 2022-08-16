@@ -24,10 +24,6 @@ public class BillDetailsService {
 	}
 
 	public BillDetails findById(long id) {
-		return billDetailsRepository.findByAccountNumber(id);
-	}
-
-	public void deleteById(int id) {
-		billDetailsRepository.deleteById(id);
+		return billDetailsRepository.findBybillId(id);
 	}
 }

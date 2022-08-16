@@ -43,7 +43,7 @@ public class CustomerService {
 	        dto.setBilldetails(billDetails);
 	        return dto;
 	    }
-	 public Customer getCustomernamepassword(String name,String password) {
+	 public Customer getCustomerNamePassword(String name,String password) {
 	        return customerRepository.findByCustomerNameAndPassword(name, password);
 	    }
 }

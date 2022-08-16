@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.elecricitybillmanagement.model.BillDetails;
+import com.chainsys.elecricitybillmanagement.model.BillPayment;
 import com.chainsys.elecricitybillmanagement.model.Customer;
 import com.chainsys.elecricitybillmanagement.model.MeterboxInformation;
 import com.chainsys.elecricitybillmanagement.service.BillDetailsService;
@@ -42,18 +43,20 @@ public class BillDetailsController {
 	}
 
 	@PostMapping("/add")
-	public String addNewBillDetails(@ModelAttribute("addbilldetails") BillDetails thebilldetails) {
+	public String addNewBillDetails(@ModelAttribute("addbilldetails") BillDetails thebilldetails,Model model) {
 	billDetailsService.save(thebilldetails);
-		return "redirect:/billdetails/list";	
+	BillPayment thebillpayment = new BillPayment();
+	thebillpayment.setBillId(thebilldetails.getBillId());
+	thebillpayment.setPaidAmount(thebilldetails.getBillAmount());
+	thebillpayment.setPaymentDate(thebilldetails.getBillDate());
+	model.addAttribute("addbillpayment", thebillpayment);
+		return "add-billpayment-form";	
 	}
-
-	
-@GetMapping("/getbilldetailsid")
+	@GetMapping("/getbilldetailsid")
 	public String getbilldetailsid(@RequestParam("id")long id, Model model) {
 	BillDetails billDetails = billDetailsService.findById(id);
 		model.addAttribute("getbilldetails",billDetails);
 		return "get-billdetails-form";
-	
 	}
 }
 

@@ -51,7 +51,6 @@ public class MeterboxInformationController {
 		return "get-meterbox-form";
 	}
 	
-
 	@GetMapping("/getcustomer")
 	public String getMeterboxInformationCustomer(@RequestParam("meterId") long id, Model model) {
 		System.out.println("id "+id);

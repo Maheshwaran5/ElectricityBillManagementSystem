@@ -6,16 +6,42 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer List</title>
+<style type="text/css">
+tr:hover {background-color: #ECF32D;}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+tr:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+body {
+	background-image:
+		url("https://wallpaperaccess.com/full/2374143.jpg");
+	height: 768px;
+	width: 1366px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+</style>
 </head>
 <body>
+<p>
+        <button onclick="document.location='/index/customerindex/'" style="float:left">Back</button>
+    </p>
 	<div id="table root">
 		<table border ="2" width="100%" cellpadding="2" >
 	
 			<thead>
 				<tr>
 				
-					<th>Customer Id</th>
 					<th>Customer Name</th>
+					<th>Customer Id</th>
 					<th>Password</th>
 					<th>Mobile Number</th>
 					<th>Aadhaar Number</th>
@@ -32,8 +58,8 @@
 			<tbody>
 				<c:forEach var="customer" items="${allcustomer}">
 					<tr>
-						<td>${customer.customerId}</td>
 						<td>${customer.customerName}</td>
+						<td>${customer.customerid}</td>
 						<td>${customer.password}</td>
 						<td>${customer.mobileNumber}</td>
 						<td>${customer.aadhaarNumber}</td>

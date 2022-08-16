@@ -30,8 +30,10 @@ public class AdminController {
     	Admin admin = adminService.getAdminNamePassword(use.getAdminName(), use.getPassword());
     	if (admin!= null){
     		model.addAttribute("admin", admin);
-    		return "redirect:/index/meterboxindex/";
-        } else
+    		return "redirect:/index/meterboxindex";
+        } else {
+        	model.addAttribute("result","Invalid UserName and Password");
+        }
             return "admin-login";
     }
 

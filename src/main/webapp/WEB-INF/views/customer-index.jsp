@@ -10,7 +10,7 @@
 <style>
 body {
 	background-image:
-		url("https://i.pinimg.com/originals/c3/d1/fd/c3d1fda3a8639c596e287158851d9e1a.jpg");
+		url("https://y26uq11r8xr1zyp0d3inciqv-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/11-1-1024x600.jpg");
 	background-height: 786px;
 	background-width: 1366px;
 	background-attachment: fixed;

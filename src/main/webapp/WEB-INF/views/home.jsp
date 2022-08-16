@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,40 +9,36 @@
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <style>
 body {
-    background-image:
-        url("https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?cs=srgb&dl=pexels-fwstudio-129731.jpg&fm=jpg.jpg");
-    background-width: 1366px;
-    background-height: 768px;
-    background-attachment: fixed;
-    background-size: cover;
+    background-image:
+        url("https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=2000");
+    height: 768px;
+    width: 1366px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 h1 {
-    font-family: "Audiowide", sans-serif;
-    font-color: white;
-    font-style: oblique;
-    font-variant: small-caps;
-    font-size: 35px;
-    font-style: oblique;
+ font-family: "Audiowide", sans-serif;
+ font-color:  #ffffff;
+ font-style: oblique;
+ font-variant: small-caps;
+ font-size: 35px;
+ font-style: oblique;
 }
 
 h2 {
-    font-family: "Audiowide", sans-serif;
-    font-color: white;
-    font-style: oblique;
-    font-variant: small-caps;
-    font-size: 35px;
-    font-style: oblique;
+ font-family: "Audiowide", sans-serif;
+ font-color:  #ffffff;
+ font-style: oblique;
+ font-variant: small-caps;
+ font-size: 35px;
+ font-style: oblique;
 }
 
-.layout {
-    width: 360px;
-    height: 390px;
-    padding: 50px;
-    border: 6px solid black;
-}
 a{
-color: black;
+color: ffffff;
 }
 </style>
 </head>
@@ -50,20 +47,20 @@ color: black;
         <form:form action="index" method="post">
             <h1>Welcome Elecricity Bill Management System</h1>
             <div class="layout">
-                <div class="admin">
                 <div class='fas fa-user-cog' style='font-size:115px;color:black'></div>
                     <h2>
-                        <a href="/admin/adminlogin">ADMIN LOGIN</a>" 
+                        <a href="/admin/adminlogin" style="text-decoration:none">ADMIN LOGIN</a> 
                     </h2>
-                </div>
-                <div>
+               
+
                 <div class='fas fa-users' style='font-size:115px;color:black'></div>
                     <h2>
-                        <a href="/customer/adminlogin"" style="text-decoration:none">Customer Login</a>
+                        <a href="/customer/customerlogin" style="text-decoration:none">CUSTOMER LOGIN</a>
                     </h2>
                 </div>
-            </div>
+
         </form:form>
+
     </div>
 </body>
 </html>

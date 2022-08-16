@@ -1,15 +1,16 @@
 package com.chainsys.elecricitybillmanagement.model;
-
-
 import java.sql.Date;
 
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Max;
@@ -20,11 +21,9 @@ import javax.validation.constraints.Min;
 public class BillDetails {
 	@Id
 	@Column(name = "BILL_ID")
-	@Min(value = 1, message = "Id above billId")
 	private int billId;
 
 	@Column(name = "BILL_DATE")
-
 	private Date billDate;
 
 	

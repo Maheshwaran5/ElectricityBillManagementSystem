@@ -34,7 +34,7 @@ body {
 	<br>
 	<a href="/billdetails/list">View Bill Details List</a>
 	<br>
-	<a href="/billdetails/getbilldetailsid?id=7654298765">Get Bill Details List</a>
+	<a href="/billdetails/getbilldetailsid?id=7">Get Bill Details List</a>
 	<br>
 
 </body>

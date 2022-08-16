@@ -11,7 +11,7 @@
 <body>
 
 	<div id="form">
-		<form:form action="" method="get" modelAttribute="getbillpayment">
+		<form:form action="add" method="get" modelAttribute="getbillpayment">
 			<div>
 				<label for="paymentId">Payment Id </label>
 				<div>
