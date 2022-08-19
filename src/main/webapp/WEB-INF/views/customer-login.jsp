@@ -7,6 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <style type="text/css">
 <%@include file="/WEB-INF/css/customer-login.css"%>
 </style>

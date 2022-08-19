@@ -7,7 +7,6 @@
 body {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
 		"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	color: white;
 	font-size: 12px;
 	background: #333 url(/images/classy_fabric.png);
 	color: red;
@@ -32,7 +31,6 @@ form:after {
 	height: 1px;
 	width: 100px;
 	left: 20%;
-	background-color: linear-gradient(left, #111, #444, #b6b6b8, #444, #111);
 	top: 0;
 }
 
@@ -72,8 +70,6 @@ form h1:after {
 	left: 50px;
 	pointer-events: none;
 	transform: rotate(70deg);
-	background: linear-gradient(50deg, rgba(255, 255, 255, 0.15),
-		rgba(0, 0, 0, 0));
 }
 
 label {
@@ -144,6 +140,10 @@ input[type=submit]:hover {
 input[type=text]:hover, input[type=password]:hover, label:hover ~ input[type=text],
 	label:hover ~ input[type=password] {
 	background: #27292c;
+}
+h1{
+	color:white;
+	text-align: center;
 }
 h2 {
 	color: red;
