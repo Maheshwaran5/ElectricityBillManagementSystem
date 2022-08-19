@@ -9,9 +9,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 <%@include file="/WEB-INF/css/customer-index.css"%>
-h1{
-text-align:center
-}
+
 </style>
 </head>
 <body>
@@ -48,7 +46,7 @@ text-align:center
 				Bill Payment <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
-				<!--  <a href="/billpayment/addform">Add Bill Payment</a> -->
+
 	<br>
 	<a href="/billpayment/list">View Bill Payment Details List</a>
 	<br>

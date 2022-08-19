@@ -37,7 +37,7 @@
 				<div class="row">
 					<form:button class="btn">Login</form:button>
 				</div>
-				<li></li>
+				<ul></ul>
 				${result}
 		</form:form>
 		<div >

@@ -13,6 +13,9 @@ body {
 	background-size: cover;
 	position: relative;
 }
+h2{
+text-align:center;
+}
 
 * {
 	box-sizing: border-box;

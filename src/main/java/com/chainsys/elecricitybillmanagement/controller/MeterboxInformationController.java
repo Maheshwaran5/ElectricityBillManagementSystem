@@ -50,7 +50,6 @@ public class MeterboxInformationController {
 
 	@GetMapping("/getcustomer")
 	public String getMeterboxInformationCustomer(@RequestParam("meterId") long id, Model model) {
-		System.out.println("id " + id);
 		MeterboxInformationCustomerDTO dto = meterboxInformationService.getmeterboxInformationCustomerDTO(id);
 		model.addAttribute("getmeterboxinformation", dto.getMeterboxInfo());
 		model.addAttribute("getcustomer", dto.getCustomer());

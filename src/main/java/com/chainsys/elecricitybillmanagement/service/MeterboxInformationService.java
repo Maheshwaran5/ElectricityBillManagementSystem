@@ -23,8 +23,7 @@ public class MeterboxInformationService {
     private CustomerRepository customerRepository;
 
     public List<MeterboxInformation> getMeterboxInformation() {
-        List<MeterboxInformation> listMi = meterboxInformationRepository.findAll();
-        return listMi;
+        return meterboxInformationRepository.findAll();
     }
     public MeterboxInformation save(MeterboxInformation mi)
     {

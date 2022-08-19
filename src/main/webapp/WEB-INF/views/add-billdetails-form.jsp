@@ -40,7 +40,7 @@
     </p>
 
 	<div class="container">
-		<h2 align="center">Add Bill Details</h2>
+		<h2>Add Bill Details</h2>
 
 
 		<form:form action="add" method="post" modelAttribute="addbilldetails">
