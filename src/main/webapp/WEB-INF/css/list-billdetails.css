@@ -1,8 +1,8 @@
 body {
 	background-image:
 		url("https://cdn2.vectorstock.com/i/1000x1000/89/16/bill-pay-flat-online-payment-billing-system-vector-30198916.jpg");
-    background-height: 786px;
-	background-width: 1366px;
+    height: 786px;
+	width: 1366px;
 	background-attachment: fixed;
 	background-size: cover;
 	font-family: Arial, Helvetica, sans-serif;
