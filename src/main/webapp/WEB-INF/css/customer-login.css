@@ -9,7 +9,7 @@ body {
 		"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	color: white;
 	font-size: 12px;
-	background: #333 url(/images/classy_fabric.png);
+	color: #333 url(/images/classy_fabric.png);
 }
 
 form {
@@ -30,7 +30,7 @@ form:after {
 	height: 1px;
 	width: 100px;
 	left: 20%;
-	background-color: linear-gradient(left, #111, #444, #b6b6b8, #444, #111);
+	color: linear-gradient(left, #111, #444, #b6b6b8, #444, #111);
 	top: 0;
 }
 
