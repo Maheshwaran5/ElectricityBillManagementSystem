@@ -27,8 +27,6 @@
 					<th>Aadhaar Number</th>
 					<th>Account Number</th>
 					<th>Meter Id</th>
-					<th>Deposit Amount</th>
-					<th>Advance Amount</th>
 					<th>Address</th>
 					<th>State</th>
 					<th>Country</th>
@@ -39,14 +37,11 @@
 				<c:forEach var="customer" items="${allcustomer}">
 					<tr>
 						<td>${customer.customerName}</td>
-						<%-- <td>${customer.customerId}</td> --%>
 						<td>${customer.password}</td>
 						<td>${customer.mobileNumber}</td>
 						<td>${customer.aadhaarNumber}</td>
 						<td>${customer.accountNumber}</td>
 						<td>${customer.meterId}</td>
-						<td>${customer.depositAmount}</td>
-						<td>${customer.advanceAmount}</td>
 						<td>${customer.address}</td>
 						<td>${customer.state}</td>
 						<td>${customer.country}</td>

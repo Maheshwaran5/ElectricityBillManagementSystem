@@ -29,7 +29,7 @@ body {
 	align-items: center;
 	background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
 	border: 0;
-	border-radius: 10px;
+	border-radius: 5px;
 	box-sizing: border-box;
 	color: #fff;
 	cursor: pointer;
@@ -128,17 +128,7 @@ body {
 						class="form-control" id="tel"
 						placeholder="Enter Your Meter Id Number." required>
 				</div>
-				<div class="col-sm-3 form-group">
-					<label for="tel">Deposit Amount</label> <input type="tel"
-						name="depositAmount" class="form-control" id="tel"
-						placeholder="Enter Your Deposit Amount." required>
-				</div>
-
-				<div class="col-sm-3 form-group">
-					<label for="tel">Advance Amount</label> <input type="tel"
-						name="advanceAmount" class="form-control" id="tel"
-						placeholder="Enter Your Advance Amount." required>
-				</div>
+				
 				<div class="col-sm-3 form-group">
 					<label for="address">Address</label> <input type="address"
 						class="form-control" name="address" id="address-1"
@@ -430,11 +420,11 @@ body {
 				<div class="col-sm-3 form-group">
 					<label for="tel">Pincode</label> <input type="tel" name="pinCode"
 						title="Pincode no Missing 6 Numbers " type="tel" required="true"
-						pattern='[0-9]{6}' placeholder='Enter Pincode'
+						pattern='[0-9]{6}' placeholder='Enter Your Pincode'
 						name="pinCode" onblur="numberCheck();">
 				</div>
 
-				<div class="col-sm-7 form-group mb-3">
+				<div class="col-sm-3 form-group mb-8">
 					<button class="button-75" role="button">
 						<span class="text">Add</span>
 					</button>
