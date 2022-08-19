@@ -4,23 +4,20 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-
-import org.aspectj.apache.bcel.ExceptionConstants;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "bill_payment")
 public class BillPayment {
 	@Id
 	@Column(name = "payment_id")
-
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "payment_id")
+	@SequenceGenerator(name = "payment_id", sequenceName = "payment_id", allocationSize = 1)
 	private int paymentId;
 
 	@Column(name = "payment_date")

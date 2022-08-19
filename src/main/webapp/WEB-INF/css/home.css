@@ -1,0 +1,34 @@
+body {
+    background-image:
+        url("https://t4.ftcdn.net/jpg/04/91/77/73/240_F_491777369_VcHNixt8lgikXefM0CmoE5PmvRi1OoCV.jpg");
+    height: 768px;
+    width: 1366px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+div{
+	text-align: center;
+}
+h1 {
+font-family: "Audiowide", sans-serif;
+font-color:  #ffffff;
+font-style: oblique;
+font-variant: small-caps;
+font-size: 35px;
+font-style: oblique;
+}
+
+h2 {
+font-family: "Audiowide", sans-serif;
+   font-color:  #ffffff;
+font-style: oblique;
+font-variant: small-caps;
+font-size: 35px;
+font-style: oblique;
+}
+
+a{
+color: ffffff;
+}

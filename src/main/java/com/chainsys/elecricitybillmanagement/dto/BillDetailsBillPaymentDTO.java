@@ -2,7 +2,6 @@ package com.chainsys.elecricitybillmanagement.dto;
 
 import com.chainsys.elecricitybillmanagement.model.BillDetails;
 import com.chainsys.elecricitybillmanagement.model.BillPayment;
-import com.chainsys.elecricitybillmanagement.model.Customer;
 
 public class BillDetailsBillPaymentDTO {
 

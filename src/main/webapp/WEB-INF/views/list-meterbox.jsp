@@ -2,32 +2,12 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>MeterboxInformation List</title>
-<style type="text/css">
-body {
-    background-image:
-        url("https://w0.peakpx.com/wallpaper/460/13/HD-wallpaper-green-lines-background-green-abstraction-geometric-background-creative-green-background-thumbnail.jpg");
-    height: 768px;
-    width: 1366px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-tr:hover {background-color: #ECF32D;}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-tr:nth-child(even) {
-  background-color: rgba(150, 212, 212, 0.4);
-}
-th:nth-child(even),td:nth-child(even) {
-  background-color: rgba(150, 212, 212, 0.4);
-}
+<style>
+<%@include file="/WEB-INF/css/list-meterbox.css"%>
 </style>
 </head>
 <body>
@@ -35,14 +15,14 @@ th:nth-child(even),td:nth-child(even) {
         <button onclick="document.location='/index/meterboxindex/'" style="float:left">Back</button>
     </p>
 	<div id="table root">
-		<table border ="2" width="100%" cellpadding="2">
-		
+		<table class="table">
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>MeterId</th>
 					<th>Meter Type</th>
 					<th>Phase Code</th>
-					<th>bill Type</th>
+					<th>Bill Type</th>
 					<th>Due_Date</th>
 					<th>Meter Rent</th>
 				</tr>

@@ -2,56 +2,40 @@ package com.chainsys.elecricitybillmanagement.model;
 
 import javax.persistence.Column;
 
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-
-import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name = "customer")
 public class Customer {
 	@Id
 	@Column(name = "account_number")
+	@Digits(integer = 12, fraction = 0, message = "Missing 12 Numbers")
 	private long accountNumber;
-	
-	
+
 	@Column(name = "customer_id")
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "customer_id")
-    @SequenceGenerator(name = "customer_id", sequenceName = "customer_id", allocationSize = 1)
-	private int customerid;
-
-	public int getCustomerid() {
-		return customerid;
-	}
-
-	public void setCustomerid(int customerid) {
-		this.customerid = customerid;
-	}
+//	@GeneratedValue(strategy = GenerationType.AUTO, generator = "customer_id")
+//    @SequenceGenerator(name = "customer_id", sequenceName = "customer_id", allocationSize = 1)
+	private int customerId;
 
 	@Column(name = "customer_name")
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter Valid Customer Name")
 	private String customerName;
-	
+
 	@Column(name = "mobile_number")
+	@Digits(integer = 10, fraction = 0, message = "Missing 10 Numbers")
 	private long mobileNumber;
 
 	@Column(name = "aadhaar_number")
+	@Digits(integer = 12, fraction = 0, message = "Missing 12 Numbers")
 	private long aadhaarNumber;
-	
-	
+
 	@Column(name = "meter_id")
 	private long meterId;
 
@@ -65,7 +49,7 @@ public class Customer {
 	private String address;
 
 	@Column(name = "state")
-	//@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid  State")
+	// @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid State")
 	private String state;
 
 	@Column(name = "country")
@@ -73,11 +57,11 @@ public class Customer {
 	private String country;
 
 	@Column(name = "pincode")
-	//@Min(value = 1, message = "Id above mobile_number")
+	@Digits(integer = 6, fraction = 0, message = "Missing 6 Numbers")
 	private int pinCode;
 
 	@Column(name = "password")
-	//@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid  Password")
+	// @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid Password")
 	private String password;
 
 	public String getPassword() {
@@ -99,6 +83,14 @@ public class Customer {
 		return accountNumber;
 	}
 
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
 	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
@@ -118,6 +110,7 @@ public class Customer {
 	public void setBill_details(BillDetails bill_details) {
 		this.bill_details = bill_details;
 	}
+
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -149,7 +142,6 @@ public class Customer {
 	public void setMeterId(long meterId) {
 		this.meterId = meterId;
 	}
-
 
 	public double getDepositAmount() {
 		return depositAmount;

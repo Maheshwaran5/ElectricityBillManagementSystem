@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css"
 	href="https://codepen.io/skjha5993/pen/bXqWpR.css">
 <title>Registration Customer Add Form</title>
-<style type="text/css">
+<style>
 label {
 	font-weight: 600;
 	color: #555;
@@ -24,12 +24,68 @@ label {
 body {
 	background: red;
 }
+
+.button-75 {
+	align-items: center;
+	background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+	border: 0;
+	border-radius: 10px;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	font-family: "Codec cold", sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	height: 54px;
+	justify-content: center;
+	letter-spacing: .4px;
+	line-height: 1;
+	max-width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 3px;
+	text-decoration: none;
+	text-transform: uppercase;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.button-75:active {
+	outline: 0;
+}
+
+.button-75:hover {
+	outline: 0;
+}
+
+.button-75 span {
+	transition: all 200ms;
+}
+
+.button-75:hover span {
+	transform: scale(.9);
+	opacity: .75;
+}
+
+@media screen and (max-width: 991px) {
+	.button-75 {
+		font-size: 15px;
+		height: 50px;
+	}
+	.button-75 span {
+		line-height: 50px;
+	}
+}
 </style>
 </head>
 <body>
-<p>
-        <button onclick="document.location='/index/customerindex/'" style="float:left">Back</button>
-    </p>
+	<p>
+		<button onclick="document.location='/index/customerindex/'"
+			style="float: left">Back</button>
+	</p>
 
 	<div class="container">
 		<form:form action="add" method="post" modelAttribute="addcustomer">
@@ -47,26 +103,29 @@ body {
 				</div>
 
 				<div class="col-sm-3 form-group">
-					<label for="tel">Mobile Number</label> <input type="tel"
-						name="mobileNumber" class="form-control" id="tel"
-						placeholder="Enter Your Contact Number." required>
+					<label for="tel">Mobile Number</label> <input name="mobileNumber"
+						title="Mobile no Missing 10 Numbers " type="tel" required="true"
+						pattern='[0-9]{10}' placeholder='Enter Mobile Number'
+						name="monileNumber" onblur="numberCheck();">
 				</div>
 
 				<div class="col-sm-3 form-group">
-					<label for="tel">Aadhaar Number</label> <input type="tel"
-						name="aadhaarNumber" class="form-control" id="tel"
-						placeholder="Enter Your Aadhaar Number." required>
+					<label for="tel">Aadhaar Number</label> <input name="aadhaarNumber"
+						title="Aadhaar no Missing 12 Numbers " type="tel" required="true"
+						pattern='[0-9]{12}' placeholder='Enter Aadhaar Number'
+						name="aadhaarNumber" onblur="numberCheck();">
 				</div>
 
 				<div class="col-sm-3 form-group">
-					<label for="tel">Account Number</label> <input type="tel"
-						name="accountNumber" class="form-control" id="tel"
-						placeholder="Enter Your Account Number." required>
+					<label for="tel">Account Number</label> <input name="accountNumber"
+						title="Account no Missing 12 Numbers " type="tel" required="true"
+						pattern='[0-9]{12}' placeholder='Enter Account Number'
+						name="accountNumber" onblur="numberCheck();">
 				</div>
 
 				<div class="col-sm-3 form-group">
-					<label for="tel">Meter Id</label> <input type="tel"
-						name="meterId" class="form-control" id="tel"
+					<label for="tel">Meter Id</label> <input type="tel" name="meterId"
+						class="form-control" id="tel"
 						placeholder="Enter Your Meter Id Number." required>
 				</div>
 				<div class="col-sm-3 form-group">
@@ -85,7 +144,7 @@ body {
 						class="form-control" name="address" id="address-1"
 						placeholder="Locality/House/Street no." required>
 				</div>
-				
+
 				<div class="col-sm-3 form-group">
 					<label for="State">State</label> <input type="address"
 						class="form-control" name="state" id="State"
@@ -370,12 +429,15 @@ body {
 				</div>
 				<div class="col-sm-3 form-group">
 					<label for="tel">Pincode</label> <input type="tel" name="pinCode"
-						class="form-control" id="tel"
-						placeholder="Enter Your Pincode Number." required>
+						title="Pincode no Missing 6 Numbers " type="tel" required="true"
+						pattern='[0-9]{6}' placeholder='Enter Pincode'
+						name="pinCode" onblur="numberCheck();">
 				</div>
 
 				<div class="col-sm-7 form-group mb-3">
-					<button class="btn btn-primary float-right">Submit</button>
+					<button class="button-75" role="button">
+						<span class="text">Add</span>
+					</button>
 				</div>
 
 			</div>

@@ -1,0 +1,20 @@
+body {
+	background-image:
+		url("https://images.pexels.com/photos/171428/pexels-photo-171428.jpeg?cs=srgb&dl=pexels-pok-rie-171428.jpg&fm=jpg");
+	height: 500px;
+	width: 500;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+h1{
+	text-align: center;
+	background-color:blue;
+}
+
+.text-danger {
+	color: #e80c4d;
+	font-size: 0.9em;
+
+}

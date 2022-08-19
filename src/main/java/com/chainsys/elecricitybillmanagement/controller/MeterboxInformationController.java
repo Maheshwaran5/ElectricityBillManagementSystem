@@ -2,12 +2,9 @@ package com.chainsys.elecricitybillmanagement.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,15 +42,15 @@ public class MeterboxInformationController {
 	}
 
 	@GetMapping("/getmeterid")
-	public String getmeterid(@RequestParam("id")long id, Model model) {
+	public String getmeterid(@RequestParam("id") long id, Model model) {
 		MeterboxInformation meter = meterboxInformationService.findById(id);
-		model.addAttribute("getmeter",meter);
+		model.addAttribute("getmeter", meter);
 		return "get-meterbox-form";
 	}
-	
+
 	@GetMapping("/getcustomer")
 	public String getMeterboxInformationCustomer(@RequestParam("meterId") long id, Model model) {
-		System.out.println("id "+id);
+		System.out.println("id " + id);
 		MeterboxInformationCustomerDTO dto = meterboxInformationService.getmeterboxInformationCustomerDTO(id);
 		model.addAttribute("getmeterboxinformation", dto.getMeterboxInfo());
 		model.addAttribute("getcustomer", dto.getCustomer());

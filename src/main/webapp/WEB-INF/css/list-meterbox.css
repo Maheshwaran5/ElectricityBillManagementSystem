@@ -1,0 +1,26 @@
+body {
+    background-image:
+        url("https://www.nicepng.com/png/detail/98-981563_web-backgrounds-editing-picsart-png-images-for-website.png");
+    height: 768px;
+    width: 1366px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+table{
+    border:2px solid black;
+	width:100%;
+	padding:2px;
+	}
+tr:hover {background-color: #ECF32D;}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+tr:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}

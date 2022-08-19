@@ -2,7 +2,6 @@ package com.chainsys.elecricitybillmanagement.service;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +14,7 @@ public class BillDetailsService {
 	private BillDetailsRepository billDetailsRepository;
 
 	public List<BillDetails> getBillDetails() {
-		List<BillDetails> listBd = billDetailsRepository.findAll();
-		return listBd;
+		return billDetailsRepository.findAll();
 	}
 
 	public BillDetails save(BillDetails bd) {
