@@ -13,7 +13,7 @@
 </style>
 </head>
 <body>
-	<h1>Welcome To Customer Index</h1>
+	<h2>Welcome To Customer Index</h2>
 
 	<div class="navbar">
 		<div class="dropdown">

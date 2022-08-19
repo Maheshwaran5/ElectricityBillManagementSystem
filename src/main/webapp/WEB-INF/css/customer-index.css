@@ -1,16 +1,17 @@
 
 
 body {
-	background-image:
-		url("https://y26uq11r8xr1zyp0d3inciqv-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/11-1-1024x600.jpg");
-	background-height: 786px;
-	background-width: 1366px;
+background-image:
+		url("https://y26uq11r8xr1zyp0d3inciqv-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/11-1-1024x600.jpg");       
+		height: 786px;
+	    width: 1366px;
 	background-attachment: fixed;
 	background-size: cover;
 	font-family: Arial, Helvetica, sans-serif;
 }
-h1{
+h2{
 text-align:center
+
 }
 
 h1 {

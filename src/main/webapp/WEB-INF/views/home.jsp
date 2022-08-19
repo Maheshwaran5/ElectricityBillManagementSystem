@@ -6,10 +6,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Index</title>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <style>
 <%@include file="/WEB-INF/css/home.css"%>
 </style>
+<script>
+<%@include file="/WEB-INF/script/home.js"%>
+</script>
 </head>
 <body>
     <div id="form">
