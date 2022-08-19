@@ -20,9 +20,7 @@ public class Customer {
 	private long accountNumber;
 
 	@Column(name = "customer_id")
-//	@GeneratedValue(strategy = GenerationType.AUTO, generator = "customer_id")
-//    @SequenceGenerator(name = "customer_id", sequenceName = "customer_id", allocationSize = 1)
-	private int customerId;
+    private int customerId;
 
 	@Column(name = "customer_name")
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter Valid Customer Name")
@@ -49,7 +47,6 @@ public class Customer {
 	private String address;
 
 	@Column(name = "state")
-	// @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid State")
 	private String state;
 
 	@Column(name = "country")
@@ -61,7 +58,6 @@ public class Customer {
 	private int pinCode;
 
 	@Column(name = "password")
-	// @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "Enter valid Password")
 	private String password;
 
 	public String getPassword() {
@@ -77,7 +73,7 @@ public class Customer {
 	private MeterboxInformation meterboxInformation;
 
 	@OneToOne(mappedBy = "customer", fetch = FetchType.LAZY)
-	private BillDetails bill_details;
+	private BillDetails billDetails;
 
 	public long getAccountNumber() {
 		return accountNumber;
@@ -103,12 +99,14 @@ public class Customer {
 		this.meterboxInformation = meterboxInformation;
 	}
 
-	public BillDetails getBill_details() {
-		return bill_details;
+	
+
+	public BillDetails getBillDetails() {
+		return billDetails;
 	}
 
-	public void setBill_details(BillDetails bill_details) {
-		this.bill_details = bill_details;
+	public void setBillDetails(BillDetails billDetails) {
+		this.billDetails = billDetails;
 	}
 
 	public String getCustomerName() {
