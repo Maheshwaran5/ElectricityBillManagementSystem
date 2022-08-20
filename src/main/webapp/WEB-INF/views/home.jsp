@@ -17,17 +17,17 @@
 <body>
     <div id="form">
         <form:form action="index" method="post">
-            <h1>Welcome Elecricity Bill Management System</h1>
+            <h1 class="glow">Welcome Elecricity Bill Management System</h1>
             <div class="layout">
-                <div class='fas fa-user-cog' style='font-size:115px;color:black'></div>
+                <div class='fas fa-user-cog' style='font-size:115px;color:red'></div>
                     <h2>
-                        <a href="/admin/adminlogin" style="text-decoration:none">ADMIN LOGIN</a> 
+                        <a href="/admin/adminlogin" style="text-decoration:none;color: #d31edf">ADMIN LOGIN</a> 
                     </h2>
                
 
-                <div class='fas fa-users' style='font-size:115px;color:black'></div>
+                <div class='fas fa-users' style='font-size:115px;color:red'></div>
                     <h2>
-                        <a href="/customer/customerlogin" style="text-decoration:none">CUSTOMER LOGIN</a>
+                        <a href="/customer/customerlogin" style="text-decoration:none;color: #d31edf">CUSTOMER LOGIN</a>
                     </h2>
                 </div>
 

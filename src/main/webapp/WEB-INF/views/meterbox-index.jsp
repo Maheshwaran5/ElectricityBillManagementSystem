@@ -34,8 +34,6 @@ text-align:center;
 
 		
 			</div>
-		
-	
 
 </body>
 </html>

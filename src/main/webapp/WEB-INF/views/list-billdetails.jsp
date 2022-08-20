@@ -7,6 +7,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Bill Details List</title>
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <style>
 <%@include file="/WEB-INF/css/list-billdetails.css"%>
 </style>

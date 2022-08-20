@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
-<style type="text/css">
+<style>
 <%@include file="/WEB-INF/css/customer-login.css"%>
 </style>
 </head>
@@ -31,9 +31,6 @@
 			<input type="submit" name="go" id="go" value="Log in">
 		</p>
 		<br>
-		<div>
-		<h2><a href="/customer/addform">Create New Account</a></h2>
-		</div>
 	</form:form>
 
 </body>

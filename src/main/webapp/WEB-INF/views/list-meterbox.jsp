@@ -6,6 +6,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>MeterboxInformation List</title>
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <style>
 <%@include file="/WEB-INF/css/list-meterbox.css"%>
 </style>
