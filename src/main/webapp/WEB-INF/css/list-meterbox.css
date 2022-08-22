@@ -59,7 +59,11 @@ label {
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
 	float: center;
+	
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
 }
+
 
 .box {
 	overflow: hidden;
@@ -105,10 +109,7 @@ label {
 	padding-left: 8px;
 }
 
-#log {
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
-		rgba(0, 0, 0, 0.19);
-}
+
 
 body {
 	background-image:
