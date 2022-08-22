@@ -27,7 +27,7 @@ text-align:center;
 				<br> 
 				<a href="/meterbox/list/">View All Materbox List</a> 
 				<br>
-				 <a href="/meterbox/getmeterid?id=1">Get Materbox ID</a> <br>
+				 <a href="/meterbox/getmeterid?id=2">Get Materbox ID</a> <br>
 
 			</div>
 		</div>
