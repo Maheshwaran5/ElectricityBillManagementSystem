@@ -45,17 +45,16 @@
 				
 			
 			<div class="row">
-				<div class="col-25">
-					<label for="billType">Bill Type</label>
-				</div>
-				<div class="col-75">
-					<form:input path="billType" placeholder="Enter Bill Type"
-						title="Bill Type can't be empty or must contain only alphabets"
-						pattern="^[a-zA-Z]*$" required="true" />
-				
-			</div>
-			<form:errors path="billType" class="text-danger" />
-			</div>
+                <div class="col-25">
+                    <label for="billType" class="button">Bill Type</label>
+                    </div>
+                    <div class="col-75">
+                        <form:select path="billType" class="button" placeholder="Enter Bill Type">
+                            <form:option value="Domestic">Domestic</form:option>
+                            <form:option value="Commercial">Commercial</form:option>
+                        </form:select>
+                    </div>
+                </div>
 			
 			
 	<div class="row">

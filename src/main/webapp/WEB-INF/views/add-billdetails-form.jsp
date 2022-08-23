@@ -72,9 +72,11 @@
 					<label for="unitConsumed">Unit Consumed</label>
 				</div>
 				<div class="col-75">
-		<form:input path="unitConsumed" id="unitConsumed" onchange="billCalculate()" />
+		<form:input path="unitConsumed" id="unitConsumed" onchange="billCalculate() "   />
 				</div>
+				<form:errors path="unitConsumed" class="text-danger" />
 				</div>
+				
 			
 
 

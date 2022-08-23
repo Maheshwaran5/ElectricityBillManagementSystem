@@ -14,7 +14,7 @@
 <p>
         <button onclick="document.location='/index/customerindex/'" style="float:left">Back</button>
     </p>
-	<div id="table root">
+	<div id="table root" style="background-color: #23c7bcc4;">
 		<table class="table">
 		<caption></caption>
 			<thead>

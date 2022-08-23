@@ -2,6 +2,8 @@ package com.chainsys.elecricitybillmanagement.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,8 +38,9 @@ public class MeterboxInformationController {
 	}
 
 	@PostMapping("/add")
-	public String addNewMeterboxInformation(@ModelAttribute("addmeterbox") MeterboxInformation themeterbox) {
+	public String addNewMeterboxInformation(@ModelAttribute("addmeterbox") MeterboxInformation themeterbox,HttpSession session) {
 		meterboxInformationService.save(themeterbox);
+		session.setAttribute("meterId",themeterbox.getMeterId());
 		return "redirect:/meterbox/list";
 	}
 

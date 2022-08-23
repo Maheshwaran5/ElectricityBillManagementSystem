@@ -38,6 +38,7 @@
 						<td>${meterbox.billType}</td>
 						<td>${meterbox.dueDate}</td>
 						<td>${meterbox.meterRent}</td>
+						
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -13,6 +13,8 @@
 </style>
 </head>
 <body>
+<button onclick="document.location='/customer/customerlogin'" style="float:left">Back</button>
+    </p>
 	<h2>Welcome To Customer Index</h2>
 
 	<div class="navbar">
@@ -24,7 +26,7 @@
 				<a href="/customer/addform">Add Customer</a>
 				 <br>
 				  <a href="/customer/list">View Customer List</a> <br> 
-				  <a href="/customer/getcustomerid?id=987615436578">Get Customer ID</a> 
+				  <a href="/customer/getcustomerid?id=326876549087">Get Customer ID</a> 
 				  <br>
 			</div>
 		</div>

@@ -1,0 +1,40 @@
+                             Title : ELECTRICITY BILL MANAGEMENT SYSTEM
+
+ELECTRICITY BILL MANAGEMENT System :
+Electricity Bill Management System is a project about the way of maintaining the Electricity records.The Admin can maintain their Electricity records and can view the details of Electricity record.
+General InformationThis project is used to maintain the meterbox,customer,billdetails,billpayment Details records.
+In this site,where we can add,view,list the data's of above mentioned records.
+
+
+Project Flow    LOGIN ---> ADMIN ---> -ADD/VIEW
+                  -ADD/METERBOX/INFORMATION
+                  -ADD/VIEW ALL/METERBOX/LIST
+                  -ADD/GET/METER ID
+                  
+
+CUSTOMER LOGIN ----> CUSTOMER
+CUSTOMER DETAILS
+                   -ADD/CUSTOMER
+                   -ADD/VIEW/CUSTOMER LIST
+                   -ADD/GET/CUSTOMER ID
+                   
+
+BILL DETAILS ----> CUSTOMER
+                  
+                   -ADD/BILL DETAILS
+                   -ADD/VIEW ALL/BILL DETAILS/LIST
+                   -ADD/BILL PAYMENT/DETAILS
+
+
+    LOGOUTFeaturesDataBase Connectivity.
+DB Relational Data Handling. One to Many relation. One to One relation
+Form validation in frontend level.
+Form null validation in Oracle DataBase level(SQL).
+Generating Id automatically
+Form Validation in JavaScript level.
+TechnologyFrontendJSP
+CSS
+HTML
+JavaScript
+BackendSpring Boot
+DatabaseOracle SQL : 21.4.3

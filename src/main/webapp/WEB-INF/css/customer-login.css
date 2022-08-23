@@ -12,7 +12,7 @@ body {
 
 
     background-image:
-        url("https://png.pngtree.com/element_our/20200610/ourmid/pngtree-contact-our-male-customer-service-image_2243670.jpg");
+        url("https://cdn.pixabay.com/photo/2014/12/11/08/08/family-563968__340.jpg");
     height: 768px;
     width: 1366px;
     background-position: center;
@@ -22,7 +22,7 @@ body {
 }
 
 form {
-	background: #111;
+	background:#93dfca;
 	width: 300px;
 	margin: 30px auto;
 	border-radius: 0.4em;
@@ -83,7 +83,7 @@ form h1:after {
 }
 
 label {
-	color: #666;
+	color:#180101;
 	display: block;
 	padding-bottom: 9px;
 }
@@ -91,7 +91,7 @@ label {
 input[type=text], input[type=password] {
 	width: 100%;
 	padding: 8px 5px;
-	background: linear-gradient(#1f2124, #27292c);
+	background: linear-gradient(#134cb557, #1568e5);
 	border: 1px solid #222;
 	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 	border-radius: 0.3em;

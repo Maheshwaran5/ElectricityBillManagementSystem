@@ -44,7 +44,8 @@ align:center;
 						<label for="password">Password</label>
 					</div>
 					<div class="col-75">
-						<form:input path="password" placeholder="Enter Your Password" />
+						<form:input type="Password" path="password" placeholder="Enter Your Password" id="password"
+						style="width: 268px;height: 37px;"/>
 					</div>
 					<form:errors path="password" class="text-danger" />
 				</div>
@@ -92,7 +93,7 @@ align:center;
 				
 
 
-					<div class="row">
+					<%-- <div class="row">
 					<div class="col-25">
 						<label for="depositAmount">Deposit Amount</label>
 					</div>
@@ -112,7 +113,7 @@ align:center;
 						<form:input path="advanceAmount"  />
 					</div>
 					<form:errors path="advanceAmount" class="text-danger" />
-				</div>
+				</div> --%>
 				
 					<div class="row">
 				<div class="col-25">

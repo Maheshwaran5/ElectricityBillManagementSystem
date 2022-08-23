@@ -18,7 +18,7 @@
 		<div class="inset">
 			<p>
 				<label for="customerName">User name</label>
-				<form:input type="text" placeholder="Enter your Email"
+				<form:input type="text" placeholder="Enter your Name"
 					path="customerName" id="email" />
 			</p>
 			<p>
@@ -31,7 +31,15 @@
 			<input type="submit" name="go" id="go" value="Log in">
 		</p>
 		<br>
+		<div>
+                <h3>
+                    <a href="/customer/addform">Create New Account </a>
+                </h3>
+            </div>
 	</form:form>
 
-</body>
+</body> 
+
+
+
 </html>
