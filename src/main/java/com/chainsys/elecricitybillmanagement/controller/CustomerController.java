@@ -2,8 +2,8 @@ package com.chainsys.elecricitybillmanagement.controller;
 
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,9 +34,6 @@ public class CustomerController {
 	@GetMapping("/addform")
 	public String showAddForm(Model model,HttpServletRequest request) {
 		Customer thecustomer = new Customer();
-//		HttpSession session = request.getSession();
-//        int meterId = (int)session.getAttribute("meterId");
-//        thecustomer.setMeterId(meterid);
 		model.addAttribute("addcustomer", thecustomer);
 		return "add-customer-form";
 	}
