@@ -10,9 +10,6 @@
 <style>
 <%@include file="/WEB-INF/css/home.css"%>
 </style>
-<script>
-<%@include file="/WEB-INF/script/home.js"%>
-</script>
 </head>
 <body>
     <div id="form">
