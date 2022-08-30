@@ -1,52 +1,74 @@
+@charset "ISO-8859-1";
+* {
+	box-sizing: border-box;
+}
+
 body {
-    background-image:
-        url("https://media.istockphoto.com/photos/high-voltage-power-transformer-picture-id1317424278?b=1&k=20&m=1317424278&s=170667a&w=0&h=5K4TgPI3EspYLM-iB2P4t2otFYeWFRxqTGCl_rWDgm0=");
-    height: 500px;
-    width: 1300px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-.glow {
-  font-size: 50px;
-  color: #ffffff;
-  text-align: center;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+	background-image:
+    url("https://t4.ftcdn.net/jpg/02/34/65/89/240_F_234658947_htH1zzRJwtjXLLjykLAQHUmV6Pwr3Ofa.jpg");
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+	
 }
 
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 
-                 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
-  }
-  to {
-    text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 
-                 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-  }
+.header {
+	background-color: white;
+	/* text-align: left; */
+	padding: 30px;
+	color: darkred;
+	font-weight: bold;
+	font-size: 37px;
+	padding-left: 25px;
+	padding-bottom: 5px;
+	font-variant: small-caps;
 }
-div{
+
+.container {
+	background-color: white;
+	display: flex;
+	height: 122px;
+	width: 1350px;
+}
+
+.main {
+	text-align: left;
+	margin-left: 41%;
+	/* margin-right: 33.3%; */
+	padding: 10px;
+	margin-bottom: 10px;
+	/* 	width: 700px; */
+	color: black;
+	/* float:right; */
+	display: flex;
+	text-decoration: none;
+}
+
+.menu {
+	border: 1px black solid;
+	border-radius: 13px;
+	background-color: white;
+	color:#ff33cc;
+	font-weight: bold;
+	font-size: 18px;
 	text-align: center;
-}
-h1 {
-font-family: "Audiowide", sans-serif;
-font-style: oblique;
-font-variant: small-caps;
-font-size: 35px;
-}
-
-h2 {
-font-family: "Audiowide", sans-serif;
-font-style: oblique;
-font-variant: small-caps;
-font-size: 35px;
+	margin-right: 15px;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 130px;
 }
 
-a{
-color: ffffff;
+.foot {
+	text-align: center;
+    color: cyan;
+    font-weight: bold;
+    font-size: 28px;
+    padding-left: 25px;
+
 }
-
-
-
+.text{
+text-decoration:none;
+color:black;
+}

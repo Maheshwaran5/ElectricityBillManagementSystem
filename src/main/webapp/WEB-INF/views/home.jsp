@@ -11,25 +11,19 @@
 </style>
 </head>
 <body>
-    <div id="form">
-        <form:form action="index" method="post">
-            <h1 class="glow">Welcome Elecricity Bill Management System</h1>
-            <div class="layout">
-                <div class='fas fa-user-cog' style='font-size:115px;color:red'></div>
-                    <h2>
-                        <a href="/admin/adminlogin" style="text-decoration:none;color: #d31edf">ADMIN LOGIN</a> 
-                    </h2>
-               
+	<div class="container">
+		<span class="header "> Welcome Elecricity Bill Management System </span>
+		<div class="main">
+			</p>
+			<p class="menu">
+				<a class=text href="/admin/adminlogin">Admin Login </a>
+			</p>
+			<p class="menu">
+				<a class=text href="/customer/customerlogin">Customer Login </a>
+			</p>
 
-                <div class='fas fa-users' style='font-size:115px;color:red'></div>
-                    <h2>
-                        <a href="/customer/customerlogin" style="text-decoration:none;color: #d31edf">CUSTOMER LOGIN</a>
-                    </h2>
-                </div>
-
-        </form:form>
-
-    </div>
+		</div>
+	</div>
+	
 </body>
 </html>
-

@@ -30,7 +30,9 @@
 					<label for="Password">Password</label>
 				</div>
 				<div class="col-75">
-					<form:input path="password" type="password" placeholder="Admin Password" required="true" />
+					<form:input path="password" type="password" placeholder="Admin Password" required="true" 
+					style="width: 240px;
+    height: 41px;"/>
 				</div>
 			</div>
 			

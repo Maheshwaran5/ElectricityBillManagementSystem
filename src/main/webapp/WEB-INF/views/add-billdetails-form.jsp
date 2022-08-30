@@ -60,7 +60,7 @@
 					<label for="billDate">Bill Date</label>
 				</div>
 				<div class="col-75">
-					<form:input type="date" path="billDate" />
+					<form:input type="date" path="billDate" title="FromDate can't be empty" required="true"/> />
 				</div>
 				</div>
 				
