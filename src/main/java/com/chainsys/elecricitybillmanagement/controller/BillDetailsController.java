@@ -2,6 +2,9 @@ package com.chainsys.elecricitybillmanagement.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,10 +32,12 @@ public class BillDetailsController {
 	}
 
 	@GetMapping("/addform")
-	public String showAddForm(Model model) {
+	public String showAddForm(Model model,HttpServletRequest request) {
 		BillDetails thebilldetails = new BillDetails();
+		HttpSession session = request.getSession();
+		long accountno = (long)session.getAttribute("accountNo");
+		thebilldetails.setAccountNumber(accountno);
 		model.addAttribute("addbilldetails", thebilldetails);
-
 		return "add-billdetails-form";
 	}
 

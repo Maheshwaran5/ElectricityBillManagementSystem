@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -69,10 +70,10 @@ public class CustomerController {
 	}
 
 	@PostMapping("/checkcustomerlogin")
-	public String checkingAccess(@ModelAttribute("customer") Customer use) {
+	public String checkingAccess(@ModelAttribute("customer") Customer use,HttpSession session) {
 		Customer customer = customerService.getCustomerNamePassword(use.getCustomerName(), use.getPassword());
 		if (customer != null) {
-
+			session.setAttribute("accountNo", customer.getAccountNumber());
 			return "redirect:/index/customerindex";
 		} else
 			return "invalid-user-error";

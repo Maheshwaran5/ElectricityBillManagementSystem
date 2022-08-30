@@ -19,7 +19,16 @@
 	<div class="container">
 	<h2>Add Meterbox</h2>
 		<form:form action="add" method="post" modelAttribute="addmeterbox">
-
+   			<div class="row">
+					<div class="col-25">
+						<label for="meterId">Meter Id</label>
+					</div>
+					<div class="col-75">
+						<form:input path="meterId"  required="true" pattern="^[0-9]+$" placeholder="Enter Meter Id"
+						title="Phase Code Type can't be empty or must contain only numbers" />
+					</div>
+					<form:errors path="meterId" class="text-danger" />
+				</div>
 			<div class="row">
 				<div class="col-25">
 					<label for="meterType">Meter Type</label>

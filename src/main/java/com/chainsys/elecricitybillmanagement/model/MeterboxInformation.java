@@ -21,8 +21,6 @@ import javax.validation.constraints.Pattern;
 @Table(name = "meterbox_information")
 public class MeterboxInformation {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "meter_id")
-    @SequenceGenerator(name = "meter_id", sequenceName = "meter_id", allocationSize = 1)
 	@Column(name = "meter_id")
 	private long meterId;
 

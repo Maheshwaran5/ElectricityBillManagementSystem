@@ -16,11 +16,16 @@
 		<div class="main">
 			</p>
 			<p class="menu">
+				<a class=text href="/customerregistration/addform">Customer Registration </a>
+			</p>
+			
+			<p class="menu">
 				<a class=text href="/admin/adminlogin">Admin Login </a>
 			</p>
 			<p class="menu">
 				<a class=text href="/customer/customerlogin">Customer Login </a>
 			</p>
+			
 
 		</div>
 	</div>
