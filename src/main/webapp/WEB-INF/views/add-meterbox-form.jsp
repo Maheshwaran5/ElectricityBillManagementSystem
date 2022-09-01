@@ -71,7 +71,7 @@
 			<label for="dueDate">Due Date</label>
 		</div>
 		<div class="col-75">
-			<form:input type="date" path="dueDate" style="width: 269px; height: 59px;" />
+			<form:input type="date" min="2022-08-31" required="true" path="dueDate" style="width: 269px; height: 59px;" />
 		</div>
 		</div>
 

@@ -8,10 +8,11 @@
 <title>Customer List</title>
 <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<%-- <style>
-<%@include file="/WEB-INF/css/list-customer.css"%>
+ <style>
+<%@include file="/WEB-INF/css/list-customer-registration.css"%>
+
 </style>
- --%></head>
+ </head>
 <body>
 	<p>
 		<button onclick="document.location='/index/home/'"

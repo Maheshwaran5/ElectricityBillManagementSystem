@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,15 +54,40 @@
 	<br>
 	<a href="/billpayment/list">View Bill Payment Details List</a>
 	<br>
-
 			</div>
 		</div>
-
-		
 			</div>
-		
-	
-
+			
+			<div id="table root">
+		<table class="table" style="
+    margin-top: 46px;
+    width: 1241px;
+    height: 237px;
+    background-color: bisque;
+">
+		<caption></caption>
+			<thead>
+				<tr>
+					<th>Bill Id</th>
+					<th>Bill Date</th>
+					<th>Unit Consumed</th>
+					<th>Bill Amount</th>
+					<th>Account Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="billdetails" items="${allbilldetails}">
+					<tr>
+						<td>${billdetails.billId}</td>
+						<td>${billdetails.billDate}</td>
+						<td>${billdetails.unitConsumed}</td>
+						<td>${billdetails.billAmount}</td>
+						<td>${billdetails.accountNumber}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>		
 </body>
 </html>
 

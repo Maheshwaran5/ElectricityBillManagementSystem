@@ -23,10 +23,12 @@
 	
 				<div class="row">
 				<div class="col-25">
-					<label for="name">Enter Customer Name</label>
+					<label for="name">Enter Customer Name</label> 
+					
 				</div>
 				<div class="col-75">
-					<form:input path="name"  placeholder="Enter Customer Name" />
+					<form:input path="name"  placeholder="Enter Customer Name"  title="Task Title can't be empty or must contain only alphabets"
+                            pattern="^[A-Za-z\s]*$" required="true" />
 				</div>
 				<form:errors path="name" class="text-danger" />
 			</div> 
@@ -36,7 +38,11 @@
 					<label for="tel">Enter Mobile Number</label>
 				</div>
 				<div class="col-75">
-					<form:input path="mobileNumber"  placeholder="Enter Mobile Number" />
+					<form:input path="mobileNumber"  placeholder="Enter Mobile Number" title="Mobile no Missing 10 Numbers " type="tel" required="true"
+						pattern='[0-9]{10}' style="
+    width: 270px;
+    height: 45px;
+"/>
 				</div>
 				<form:errors path="mobileNumber" class="text-danger" />
 			</div> 
@@ -46,7 +52,8 @@
 					<label for="area">Enter Area</label>
 				</div>
 				<div class="col-75">
-					<form:input path="area"  placeholder="Enter Your Area" />
+					<form:input path="area"  placeholder="Enter Your Area" title="Task Title can't be empty or must contain only alphabets"
+                            pattern="^[A-Za-z\s]*$" required="true" />
 				</div>
 				<form:errors path="area" class="text-danger" />
 			</div> 
