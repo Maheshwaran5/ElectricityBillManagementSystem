@@ -18,6 +18,20 @@ public class CustomerRegistration {
 	@Pattern(regexp = "^[A-Za-z]\\w{2,20}$", message = "Enter Valid Customer Name")
 	private String name;
 	
+	@Column(name = "mobileno")
+	@Digits(integer = 10, fraction = 0, message = "Missing 10 Numbers")
+	private long mobileNumber;
+	
+	@Column(name = "area")
+	private String area;
+	
+	@Id
+	@Column(name = "meter_id")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "meter_id")
+	@SequenceGenerator(name = "meter_id", sequenceName = "meter_id", allocationSize = 1)
+	private long meterId;
+
+	
 	public String getName() {
 		return name;
 	}
@@ -42,16 +56,5 @@ public class CustomerRegistration {
 	public void setMeterId(long meterId) {
 		this.meterId = meterId;
 	}
-	@Column(name = "mobileno")
-	@Digits(integer = 10, fraction = 0, message = "Missing 10 Numbers")
-	private long mobileNumber;
-	@Column(name = "area")
-//	@Pattern(regexp = "^[A-Za-z]\\w{2,50}$", message = "Enter Your Area")
-	private String area;
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "meterid")
-    @SequenceGenerator(name = "meterid", sequenceName = "meterid", allocationSize = 1)
-	@Id
-	@Column(name = "meterid")
-	private long meterId;
 
 }

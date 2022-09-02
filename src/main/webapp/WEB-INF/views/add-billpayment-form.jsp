@@ -21,22 +21,25 @@
 		
 			<form:form action="/billpayment/add" method="post" modelAttribute="addbillpayment">
 				
-              <%-- <div class="row">
+               <div class="row">
 				<div class="col-25">
-					<label for="paymentId">Payment Id</label>
+					<label for="meterId">Meter Id</label>
 				</div>
 				<div class="col-75">
-					<form:input path="paymentId" placeholder="Enter Payment Id" />
+					<form:input path="meterId" placeholder="Enter Meter Id" />
 				</div>
-				<form:errors path="paymentId" class="text-danger" />
-			</div> --%>
+				<form:errors path="meterId" class="text-danger" />
+			</div> 
 				
 				<div class="row">
 				<div class="col-25">
 					<label for="paymentDate">Payment Date</label>
 				</div>
 				<div class="col-75">
-					<form:input type="date" path="paymentDate" />
+					<form:input type="date" path="paymentDate" style="
+    width: 266px;
+    height: 39px;
+" />
 				</div>
 				</div>
 				
@@ -51,7 +54,15 @@
 				<form:errors path="billId" class="text-danger" />
 			</div>
 			</div>
-			
+				<div class="row">
+				<div class="col-25">
+					<label for="accountNumber">Account Number</label>
+				</div>
+				<div class="col-75">
+					<form:input path="accountNumber"  />
+				</div>
+				<form:errors path="accountNumber" class="text-danger" />
+			</div>
 			    <div class="row">
 				<div class="col-25">
 					<label for="paidAmount">Paid Amount</label>
@@ -61,6 +72,7 @@
 				</div>
 				<form:errors path="paidAmount" class="text-danger" />
 			</div>
+		
 			</div>
 				<div class="row">
 			<form:button class="btn">Submit</form:button>

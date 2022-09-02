@@ -11,22 +11,33 @@
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <style>
 <%@include file="/WEB-INF/css/list-billdetails.css"%>
+h1 {text-align: center;}
+div{text-align: center;}
+.table-size{
+border:2px ;
+width:100%;
+cellpadding:2px;
+ }
 </style>
 </head>
 <body>
 <p>
-        <button onclick="document.location='/index/customerindex/'" style="float:left">Back</button>
+        <button onclick="document.location='/index/meterboxindex/'" style="float:left">Back</button>
     </p>
 	<div id="table root">
-		<table class="table">
-		<caption></caption>
+		<table class="table-size">
+        <caption></caption>
+            <colgroup>
+                <col span="10" style="background-color:plum">
+                <col span="4" style="background-color: crimson">
+            </colgroup>
 			<thead>
 				<tr>
 					<th>Bill Id</th>
 					<th>Bill Date</th>
 					<th>Unit Consumed</th>
 					<th>Bill Amount</th>
-					<th>Account Number</th>
+					<th>Meter Id</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,7 +47,7 @@
 						<td>${billdetails.billDate}</td>
 						<td>${billdetails.unitConsumed}</td>
 						<td>${billdetails.billAmount}</td>
-						<td>${billdetails.accountNumber}</td>
+						<td>${billdetails.meterId}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

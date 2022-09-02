@@ -10,13 +10,17 @@
 <style>
 <%@include file="/WEB-INF/css/add-meterbox-form.css"%>
 </style>
+<script type="text/javascript">
+<%@include file="/WEB-INF/script/datevalidation.js"%>
+</script>
 </head>
 <body>
-<p>
-        <button onclick="document.location='/index/meterboxindex/'" style="float:left">Back</button>
-    </p>
+
 	
 	<div class="container">
+	<p>
+        <button onclick="document.location='/index/meterboxindex/'" style="float:left">Back</button>
+    </p>
 	<h2>Add Meterbox</h2>
 		<form:form action="add" method="post" modelAttribute="addmeterbox">
    			<div class="row">
@@ -71,7 +75,8 @@
 			<label for="dueDate">Due Date</label>
 		</div>
 		<div class="col-75">
-			<form:input type="date" min="2022-08-31" required="true" path="dueDate" style="width: 269px; height: 59px;" />
+			<form:input type="date" min="2022-08-31" required="true" path="dueDate" id="duedate" style="width: 287px;
+    height: 46px;" onblur="duedatecheck()"/>
 		</div>
 		</div>
 
@@ -90,7 +95,7 @@
 		
 		
 		<div class="row">
-			<form:button class="button-85" role="button">Add</form:button>
+			<form:button class="button-85" role="button" onblur="duedatecheck()">Add</form:button>
 		</div>
 		</form:form>
 	</div>

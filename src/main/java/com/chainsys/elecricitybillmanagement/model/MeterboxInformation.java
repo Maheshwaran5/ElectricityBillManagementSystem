@@ -2,15 +2,14 @@ package com.chainsys.elecricitybillmanagement.model;
 
 import java.sql.Date;
 
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Max;
@@ -52,6 +51,16 @@ public class MeterboxInformation {
 	@Min(value = 1, message = "Id above meter_rent is not be required ")
 	@Max(value = 5000, message = "Id above meter_rent is not be required ")
 	private int meterRent;
+	
+	@OneToMany(mappedBy ="meterBoxInformation",fetch=FetchType.LAZY)
+	private List<BillDetails> billdetails;
+	public List<BillDetails> getBilldetails() {
+		return billdetails;
+	}
+
+	public void setBilldetails(List<BillDetails> billdetails) {
+		this.billdetails = billdetails;
+	}
 
 	@OneToOne(mappedBy = "meterboxInformation", fetch = FetchType.LAZY)
 	private Customer customer;

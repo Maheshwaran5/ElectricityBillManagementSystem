@@ -1,6 +1,10 @@
 package com.chainsys.elecricitybillmanagement.controller;
 
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.elecricitybillmanagement.model.BillDetails;
 import com.chainsys.elecricitybillmanagement.model.BillPayment;
 import com.chainsys.elecricitybillmanagement.service.BillDetailsService;
 import com.chainsys.elecricitybillmanagement.service.BillPaymentService;
@@ -24,19 +27,24 @@ public class BillPaymentController {
 	BillDetailsService billDetailService;
 
 	@GetMapping("/list")
-	public String getAllBillPayment(Model model) {
-		List<BillPayment> billpaymentlist = billPaymentService.getBillPayment();
+	public String getAllBillPayment(HttpServletRequest request,Model model) {
+		HttpSession session = request.getSession();
+		long meterId = (long)session.getAttribute("meterId");
+		List<BillPayment> billpaymentlist = billPaymentService.getBillPaymentByMeterId(meterId);
 		model.addAttribute("allbillpayment", billpaymentlist);
 		return "list-billpayment";
 	}
 
 	@GetMapping("/addform")
-	public String showAddForm(@RequestParam("id") String id,Model model) {
+	public String showAddForm(Model model,HttpServletRequest request) {
 		BillPayment thebillpayment = new BillPayment();
-		int billId=Integer.parseInt(id);
-		BillDetails billDetails=billDetailService.findById(billId);
-		thebillpayment.setBillId(billDetails.getBillId());
-		thebillpayment.setPaidAmount(billDetails.getBillAmount());
+		HttpSession session = request.getSession();
+		long meterId = (long)session.getAttribute("meterId");
+		thebillpayment.setMeterId(meterId);
+//		int billId=Integer.parseInt(id);
+//		BillDetails billDetails=billDetailService.findById(billId);
+//		thebillpayment.setBillId(billDetails.getBillId());
+//		thebillpayment.setPaidAmount(billDetails.getBillAmount());
 		model.addAttribute("addbillpayment", thebillpayment);
 		return "add-billpayment-form";
 	}
@@ -46,6 +54,24 @@ public class BillPaymentController {
 		billPaymentService.save(thebillpayment);
 		return "redirect:/billpayment/list";	
 	}
+	
+	@GetMapping("/addpaymentform")
+	public String showAddFoorm(@RequestParam("id")long id,Model model,HttpServletRequest request) {
+		BillPayment thebillpayment = new BillPayment();
+		HttpSession session = request.getSession();
+		long meterId = (long)session.getAttribute("meterId");
+		thebillpayment.setMeterId(meterId);
+		int billId =(int) session.getAttribute("billId");
+		thebillpayment.setBillId(billId);
+//		System.out.println(billId);
+//		int billId=Integer.parseInt(id);
+//		BillDetails billDetails=billDetailService.findById(billId);
+//		thebillpayment.setBillId(billDetails.getBillId());
+//		thebillpayment.setPaidAmount(billDetails.getBillAmount());
+		model.addAttribute("addbillpayment", thebillpayment);
+		return "add-billpayment-form";
+	}
+	
 	@GetMapping("/getbillpaymentid")
 	public String getbillpaymentid(@RequestParam("id")int id, Model model) {
 		BillPayment billPayment = billPaymentService.findById(id);

@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -33,26 +34,22 @@ public class BillDetails {
 		this.billDate = billDate;
 	}
 
+	public long getMeterId() {
+		return meterId;
+	}
+
+	public void setMeterId(long meterId) {
+		this.meterId = meterId;
+	}
+
 	@Column(name = "BILL_AMOUNT")
 	private long billAmount;
 
 	@Column(name = "UNIT_CONSUMED")
 	private long unitConsumed;
 
-	@Column(name = "ACCOUNT_NUMBER")
-	private long accountNumber;
-
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "account_Number", nullable = false, insertable = false, updatable = false)
-	private Customer customer;
-
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
+	@Column(name = "meter_id")
+	private long meterId;
 
 	public int getBillId() {
 		return billId;
@@ -78,12 +75,16 @@ public class BillDetails {
 		this.unitConsumed = unitConsumed;
 	}
 
-	public long getAccountNumber() {
-		return accountNumber;
+	@ManyToOne(fetch =FetchType.LAZY)
+    @JoinColumn(name="meter_id",nullable =false,insertable=false,updatable=false)
+	private MeterboxInformation meterBoxInformation;
+
+	public MeterboxInformation getMeterBoxInformation() {
+		return meterBoxInformation;
 	}
 
-	public void setAccountNumber(long accountNumber) {
-		this.accountNumber = accountNumber;
+	public void setMeterBoxInformation(MeterboxInformation meterBoxInformation) {
+		this.meterBoxInformation = meterBoxInformation;
 	}
-
+	
 }

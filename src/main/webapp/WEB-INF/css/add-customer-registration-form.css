@@ -5,7 +5,7 @@
 
 body {
 	background-image:
-		url("https://m.media-amazon.com/images/I/71Kl13rPONL._SL1280_.jpg");
+		url("https://img.freepik.com/free-photo/asian-woman-working-through-paperwork_53876-138148.jpg?w=740&t=st=1662097578~exp=1662098178~hmac=7284ca756b6b1c7edbc0b03193225169f6013cf860a0f1004e5843c5390a47ed");
 	height: 768px;
 	width: 1366px;
 	background-position: center;
@@ -38,7 +38,7 @@ label {
 	margin-top: 1%;
 	margin-left: 30%;
 	border-radius: 5px;
-	background-color:#75bee5a8;
+	background-color:aqua;
 	padding: 30px;
 	width: 40%;
 	float: left;
@@ -72,7 +72,7 @@ label {
 	text-decoration: none;
 	outline: none;
 	color: white;
-	background-color: #6bb6ff;
+	background-color: #eb5a5a;
 	border: none;
 	border-radius: 10px;
 	box-shadow: 0 9px #1E90FF;

@@ -24,4 +24,8 @@ public class BillDetailsService {
 	public BillDetails findById(long id) {
 		return billDetailsRepository.findBybillId(id);
 	}
+	
+	public List<BillDetails> getMeterDetails(long meterId) {
+		return billDetailsRepository.findByMeterId(meterId);
+	}
 }

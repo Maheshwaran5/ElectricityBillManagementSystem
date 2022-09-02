@@ -83,7 +83,7 @@ body {
 </head>
 <body>
 	<p>
-		<button onclick="document.location='/index/customerindex/'"
+		<button onclick="document.location='/customer/customerlogin'"
 			style="float: left">Back</button>
 	</p>
 
@@ -91,6 +91,8 @@ body {
 		<form:form action="add" method="post" modelAttribute="addcustomer">
 			<h2 class="text-center">Add Customer</h2>
 			<div class="row jumbotron">
+			
+				
 				<div class="col-sm-3 form-group">
 					<label for="name-f">Enter Customer Name</label> <input type="text"
 						class="form-control" name="customerName" id="name-f"
@@ -116,12 +118,12 @@ body {
 						name="aadhaarNumber" onblur="numberCheck();">
 				</div>
 
-				<div class="col-sm-3 form-group">
+				<!-- <div class="col-sm-3 form-group">
 					<label for="tel">Account Number</label> <input name="accountNumber"
 						title="Account no Missing 12 Numbers " type="tel" required="true"
 						pattern='[0-9]{12}' placeholder='Enter Account Number'
 						name="accountNumber" onblur="numberCheck();">
-				</div>
+				</div> -->
 
 				<div class="col-sm-3 form-group">
 					<label for="tel">Meter Id</label> <input type="tel" name="meterId"
@@ -428,8 +430,9 @@ body {
 					<button class="button-75" role="button">
 						<span class="text">Add</span>
 					</button>
+					<div style="color:green;margin-top: 19px;width: 249px;font-weight: 900;">${result}</div>
+				<div style="color:red">${error}</div>
 				</div>
-
 			</div>
 		</form:form>
 	</div>

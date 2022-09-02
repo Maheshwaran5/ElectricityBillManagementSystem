@@ -11,37 +11,22 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 <%@include file="/WEB-INF/css/customer-index.css"%>
-
 </style>
 </head>
 <body>
-<button onclick="document.location='/customer/customerlogin'" style="float:left">Back</button>
-    </p>
+	
 	<h2>Welcome To Customer Index</h2>
 
 	<div class="navbar">
+	<button onclick="document.location='/index/home'" style="float:right;width: 81px;height: 44px;font-size: 15px;font-weight: 300;margin-top: 40x;">Logout</button>
 		<div class="dropdown">
 			<button class="dropbtn">
 				Customer Details <em class="fa fa-caret-down"></em>
 			</button>
 			<div class="dropdown-content">
-				<a href="/customer/addform">Add Customer</a>
 				 <br>
 				  <a href="/customer/list">View Customer List</a> <br> 
-				  <a href="/customer/getcustomerid?id=326876549087">Get Customer ID</a> 
 				  <br>
-			</div>
-		</div>
-
-		<div class="dropdown">
-			<button class="dropbtn">
-				Bill Details <em class="fa fa-caret-down"></em>
-			</button>
-			<div class="dropdown-content">
-				<a href="/billdetails/addform">Add Bill Details</a>
-	<br>
-	<a href="/billdetails/list">View Bill Details List</a>
-	<br>
 			</div>
 		</div>
 
@@ -52,6 +37,7 @@
 			<div class="dropdown-content">
 
 	<br>
+	<a href="/billpayment/addform">Add Bill Payment</a>
 	<a href="/billpayment/list">View Bill Payment Details List</a>
 	<br>
 			</div>
@@ -61,8 +47,8 @@
 			<div id="table root">
 		<table class="table" style="
     margin-top: 46px;
-    width: 1241px;
-    height: 237px;
+    width: 1366px;
+    height: 99px;
     background-color: bisque;
 ">
 		<caption></caption>
@@ -72,7 +58,8 @@
 					<th>Bill Date</th>
 					<th>Unit Consumed</th>
 					<th>Bill Amount</th>
-					<th>Account Number</th>
+					<th>Meter Id</th>
+					
 				</tr>
 			</thead>
 			<tbody>
@@ -82,12 +69,39 @@
 						<td>${billdetails.billDate}</td>
 						<td>${billdetails.unitConsumed}</td>
 						<td>${billdetails.billAmount}</td>
-						<td>${billdetails.accountNumber}</td>
+						<td>${billdetails.meterId}</td>
+						<%-- <td><a href="/billpayment/addpaymentform?id=${billdetails.meterId}">Pay now</a></td> --%>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-	</div>		
+	</div>	
+	
+	<button type="button" class="collapsible" style="
+    margin-left: 557px;
+    margin-top: 18px;
+    text-align: center;
+">Pay now</button>
+<div class="content">
+ <iframe src="/billpayment/addform" title="Frame"> </iframe>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>	
+
 </body>
 </html>
 

@@ -5,7 +5,7 @@
 
 body {
 	background-image:
-		url("https://m.media-amazon.com/images/I/71Kl13rPONL._SL1280_.jpg");
+		url("https://img.freepik.com/premium-photo/electric-power-box-meter-home-use_293060-16851.jpg?w=740");
 	height: 768px;
 	width: 1366px;
 	background-position: center;
@@ -36,11 +36,11 @@ label {
 
 .container {
 	margin-top: 1%;
-	margin-left: 30%;
+	margin-left: 1px;
 	border-radius: 5px;
-	background-color:#75bee5a8;
+	background-color:orange;
 	padding: 30px;
-	width: 40%;
+	width: 43%;
 	float: left;
 }
 

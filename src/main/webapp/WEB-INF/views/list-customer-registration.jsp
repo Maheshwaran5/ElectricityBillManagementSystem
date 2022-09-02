@@ -10,7 +10,13 @@
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  <style>
 <%@include file="/WEB-INF/css/list-customer-registration.css"%>
-
+h1 {text-align: center;}
+div{text-align: center;}
+.table-size{
+border:2px ;
+width:100%;
+cellpadding:2px;
+ }
 </style>
  </head>
 <body>
@@ -19,8 +25,12 @@
 			style="float: left">Back</button>
 	</p> 
 	<div id="table root">
-		<table class="table">
-		<caption></caption>
+		<table class="table-size">
+        <caption></caption>
+            <colgroup>
+                <col span="10" style="background-color:aqua">
+                <col span="4" style="background-color: red">
+            </colgroup>
          <thead>
 				<tr>
 

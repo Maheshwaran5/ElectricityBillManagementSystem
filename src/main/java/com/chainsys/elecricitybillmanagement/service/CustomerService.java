@@ -5,8 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.elecricitybillmanagement.dto.CustomerBillDetailsDTO;
-import com.chainsys.elecricitybillmanagement.model.BillDetails;
 import com.chainsys.elecricitybillmanagement.model.Customer;
 import com.chainsys.elecricitybillmanagement.repository.BillDetailsRepository;
 import com.chainsys.elecricitybillmanagement.repository.CustomerRepository;
@@ -34,14 +32,14 @@ public class CustomerService {
 	public void deleteById(int id) {
 		customerRepository.deleteById(id);
 	}
-	 public CustomerBillDetailsDTO getCustomerBillDetails(long id) {
-	        Customer customer = findById(id);
-	        CustomerBillDetailsDTO dto = new CustomerBillDetailsDTO();
-	        dto.setCustomer(customer);
-	        BillDetails billDetails = billDetailsRepository.findByAccountNumber(customer.getAccountNumber());
-	        dto.setBilldetails(billDetails);
-	        return dto;
-	    }
+//	 public CustomerBillDetailsDTO getCustomerBillDetails(long id) {
+//	        Customer customer = findById(id);
+//	        CustomerBillDetailsDTO dto = new CustomerBillDetailsDTO();
+//	        dto.setCustomer(customer);
+//	        BillDetails billDetails = billDetailsRepository.findByAccountNumber(customer.getAccountNumber());
+//	        dto.setBilldetails(billDetails);
+//	        return dto;
+//	    }
 	 public Customer getCustomerNamePassword(String name,String password) {
 	        return customerRepository.findByCustomerNameAndPassword(name, password);
 	    }

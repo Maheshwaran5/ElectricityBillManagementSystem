@@ -1,26 +1,30 @@
-tr:hover {background-color: #ECF32D;}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-tr:nth-child(even) {
-  background-color: rgba(150, 212, 212, 0.4);
-}
-th:nth-child(even),td:nth-child(even) {
-  background-color: rgba(150, 212, 212, 0.4);
-}
-table{
-    border:2px solid black;
-	width:100%;
-	padding:2px;
-	}
-/* body {
+@charset "ISO-8859-1";
+*
+body {
 	background-image:
-		url("https://wallpaperaccess.com/full/2374143.jpg");
+		url("https://img.freepik.com/premium-photo/monthly-utility-bills-cost-utilities-planning-utility-costs-monthly-budget_197463-885.jpg?w=740");
 	height: 768px;
 	width: 1366px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-} */
+}
+body {
+    background-size: 1366px 768px;
+    background-attachment: fixed;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+th, td {
+    border-color: #96D4D4;
+}
+
+tr:hover {
+    background-color: #D6EEEE;
+}

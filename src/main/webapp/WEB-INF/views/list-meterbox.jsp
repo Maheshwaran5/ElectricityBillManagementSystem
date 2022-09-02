@@ -33,9 +33,6 @@
 </style>
 </head>
 <body>
-<p>
-        <button onclick="document.location='/index/meterboxindex/'" style="float:left">Back</button>
-    </p>
 	<div id="table root">
 		<table class="table">
 		<caption></caption>
@@ -47,6 +44,7 @@
 					<th>Bill Type</th>
 					<th>Due_Date</th>
 					<th>Meter Rent</th>
+					<th>Meter List</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -58,7 +56,7 @@
 						<td>${meterbox.billType}</td>
 						<td>${meterbox.dueDate}</td>
 						<td>${meterbox.meterRent}</td>
-						
+						<td><a style="color:white" href="/billdetails/meterlist?id=${meterbox.meterId}">Meter List</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

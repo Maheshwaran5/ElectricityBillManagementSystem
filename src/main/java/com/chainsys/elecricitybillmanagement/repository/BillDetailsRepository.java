@@ -11,6 +11,6 @@ public interface BillDetailsRepository extends CrudRepository<BillDetails,Long>{
 	BillDetails save(BillDetails billDetails);
     List <BillDetails> findAll();
     
-	BillDetails findByAccountNumber(long id);
 	BillDetails findBybillId(long id);
+	 List <BillDetails> findByMeterId(long meterId);
 }

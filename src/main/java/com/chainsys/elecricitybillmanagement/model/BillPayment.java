@@ -29,6 +29,20 @@ public class BillPayment {
 
 	@Column(name = "paid_amount")
 	private long paidAmount;
+	
+	@Column(name = "account_Number")
+	private long accountNumber;
+	
+	public long getMeterId() {
+		return meterId;
+	}
+
+	public void setMeterId(long meterId) {
+		this.meterId = meterId;
+	}
+
+	@Column(name = "meter_id")
+	private long meterId;
 
 	public int getPaymentId() {
 		return paymentId;
@@ -60,5 +74,13 @@ public class BillPayment {
 
 	public void setPaidAmount(long paidAmount) {
 		this.paidAmount = paidAmount;
+	}
+
+	public long getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(long accountNumber) {
+		this.accountNumber = accountNumber;
 	}
 }

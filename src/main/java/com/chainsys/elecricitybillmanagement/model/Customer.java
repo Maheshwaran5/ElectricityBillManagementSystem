@@ -4,9 +4,12 @@ import javax.persistence.Column;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Pattern;
@@ -15,11 +18,9 @@ import javax.validation.constraints.Pattern;
 @Table(name = "customer")
 public class Customer {
 	@Id
-	@Column(name = "account_number")
-	@Digits(integer = 12, fraction = 0, message = "Missing 12 Numbers")
-	private long accountNumber;
-
 	@Column(name = "customer_id")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "customer_id")
+	@SequenceGenerator(name = "customer_id", sequenceName = "customer_id", allocationSize = 1)
     private int customerId;
 
 	@Column(name = "customer_name")
@@ -72,23 +73,12 @@ public class Customer {
 	@JoinColumn(name = "meter_id", nullable = false, insertable = false, updatable = false)
 	private MeterboxInformation meterboxInformation;
 
-	@OneToOne(mappedBy = "customer", fetch = FetchType.LAZY)
-	private BillDetails billDetails;
-
-	public long getAccountNumber() {
-		return accountNumber;
-	}
-
 	public int getCustomerId() {
 		return customerId;
 	}
 
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
-	}
-
-	public void setAccountNumber(long accountNumber) {
-		this.accountNumber = accountNumber;
 	}
 
 	public MeterboxInformation getMeterboxInformation() {
@@ -98,17 +88,6 @@ public class Customer {
 	public void setMeterboxInformation(MeterboxInformation meterboxInformation) {
 		this.meterboxInformation = meterboxInformation;
 	}
-
-	
-
-	public BillDetails getBillDetails() {
-		return billDetails;
-	}
-
-	public void setBillDetails(BillDetails billDetails) {
-		this.billDetails = billDetails;
-	}
-
 	public String getCustomerName() {
 		return customerName;
 	}

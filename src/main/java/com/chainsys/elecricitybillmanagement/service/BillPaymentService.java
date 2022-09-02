@@ -17,6 +17,9 @@ public class BillPaymentService {
 	public List<BillPayment> getBillPayment() {
 		return billPaymentRepository.findAll();
 	}
+	public List<BillPayment> getBillPaymentByMeterId(long meterId) {
+		return billPaymentRepository.findByMeterId(meterId);
+	}
 
 	public BillPayment save(BillPayment bp) {
 		return billPaymentRepository.save(bp);

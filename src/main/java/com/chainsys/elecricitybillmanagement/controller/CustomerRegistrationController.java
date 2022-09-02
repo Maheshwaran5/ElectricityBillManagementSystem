@@ -43,7 +43,6 @@ public class CustomerRegistrationController {
 
 	@PostMapping("/add")
 	public String addNewCustomer(@ModelAttribute("addcustomerregistration") CustomerRegistration thecustomer) {
-		
 		customerRegistrationService.save(thecustomer);
 		return "redirect:/customerregistration/list";
 

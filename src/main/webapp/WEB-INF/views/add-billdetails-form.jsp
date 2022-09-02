@@ -26,7 +26,7 @@
 			document.getElementById("billAmount").value = total;
 		}
 		else{
-			alert("Not a valid option.");
+			alert("");
 		}
 		/* var total = parseInt(unit) * 4;
 		document.getElementById("billAmount").value = total; */
@@ -45,15 +45,15 @@
 
 		<form:form action="add" method="post" modelAttribute="addbilldetails">
 
-			<%-- <div class="row">
+			 <div class="row">
 				<div class="col-25">
-					<label for="billId">Bill Id</label>
+					<label for="meterId">Meter Id</label>
 				</div>
 				<div class="col-75">
-					<form:input path="billId"  placeholder="Enter Bill Id" />
+					<form:input path="meterId"  placeholder="Enter Meter Id" />
 				</div>
-				<form:errors path="billId" class="text-danger" />
-			</div> --%>
+				<form:errors path="meterId" class="text-danger" />
+			</div>
 			
 			<div class="row">
 				<div class="col-25">
@@ -65,9 +65,6 @@
     height: 41px;"/> 
 				</div>
 				</div>
-				
-				
-			
 			
 			<div class="row">
 				<div class="col-25">
@@ -79,18 +76,7 @@
 				<form:errors path="unitConsumed" class="text-danger" />
 				</div>
 				
-			
-
-
-
-			<div class="row">
-				<div class="col-25">
-				<label for="accountNumber">Account Number</label>
-				</div>
-				<div class="col-75">
-				<form:input path="accountNumber" placeholder="Enter Account Number" />
-				</div>
-				</div>
+		
 			
 
 			<div class="row">
@@ -109,6 +95,12 @@
 	
 	</form:form>
 	</div>
-
+<div class="details">
+<pre>
+1 units upto 100 units = Rs.3<br>
+100 units to 500 units = Rs.6<br>
+Greater than 500 units = Rs.9<br>
+</pre>
+</div>
 </body>
 </html>

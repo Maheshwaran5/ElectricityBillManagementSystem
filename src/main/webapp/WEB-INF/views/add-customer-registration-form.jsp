@@ -12,15 +12,17 @@
 </style>
 </head>
 <body>
-	 <p>
-		<button onclick="document.location='/index/customerindex/'"
-			style="float: left">Back</button>
-	</p> 
+	 
 
 	     <div class="container">
+	     <p>
+		<button onclick="document.location='/index/home'"
+			style="margin-top: -35px;margin-left: -26px;float: left">Back</button>
+	</p> 
 		<form:form action="add" method="post" modelAttribute="addcustomerregistration">
 			<h2 class="text-center">Add Customer Registration</h2>
 	
+				
 				<div class="row">
 				<div class="col-25">
 					<label for="name">Enter Customer Name</label> 

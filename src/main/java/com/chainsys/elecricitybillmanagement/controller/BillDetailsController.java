@@ -2,8 +2,6 @@ package com.chainsys.elecricitybillmanagement.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,28 +28,32 @@ public class BillDetailsController {
 		model.addAttribute("allbilldetails", billlist);
 		return "list-billdetails";
 	}
+	@GetMapping("/meterlist")
+	public String getAllMeterList(@RequestParam("id") long id,Model model) {
+		List<BillDetails> billlist = billDetailsService.getMeterDetails(id);
+		model.addAttribute("allbilldetails", billlist);
+		return "list-billdetails";
+	}
 
 	@GetMapping("/addform")
-	public String showAddForm(Model model,HttpServletRequest request) {
+	public String showAddForm(Model model) {
 		BillDetails thebilldetails = new BillDetails();
-		HttpSession session = request.getSession();
-		long accountno = (long)session.getAttribute("accountNo");
-		thebilldetails.setAccountNumber(accountno);
 		model.addAttribute("addbilldetails", thebilldetails);
 		return "add-billdetails-form";
 	}
 
 	@PostMapping("/add")
 	public String addNewBillDetails(@ModelAttribute("addbilldetails") BillDetails thebilldetails, Model model) {
+		
 		billDetailsService.save(thebilldetails);
 		BillPayment thebillpayment = new BillPayment();
 		thebillpayment.setBillId(thebilldetails.getBillId());
 		thebillpayment.setPaidAmount(thebilldetails.getBillAmount());
 		thebillpayment.setPaymentDate(thebilldetails.getBillDate());
 		model.addAttribute("addbillpayment", thebillpayment);
-		return "add-billpayment-form";
+		return "redirect:/billdetails/list";
 	}
-
+	
 	@GetMapping("/getbilldetailsid")
 	public String getbilldetailsid(@RequestParam("id") long id, Model model) {
 		BillDetails billDetails = billDetailsService.findById(id);

@@ -27,7 +27,6 @@
 					<th>Password</th>
 					<th>Mobile Number</th>
 					<th>Aadhaar Number</th>
-					<th>Account Number</th>
 					<th>Meter Id</th>
 					<th>Address</th>
 					<th>State</th>
@@ -42,7 +41,6 @@
 						<td>${customer.password}</td>
 						<td>${customer.mobileNumber}</td>
 						<td>${customer.aadhaarNumber}</td>
-						<td>${customer.accountNumber}</td>
 						<td>${customer.meterId}</td>
 						<td>${customer.address}</td>
 						<td>${customer.state}</td>

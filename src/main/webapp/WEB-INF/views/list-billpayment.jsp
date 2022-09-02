@@ -23,6 +23,8 @@
 					<th>Payment Date</th>
 					<th>Bill Id</th>
 					<th>Paid Amount</th>
+					<th>Meter Id</th>
+					<th>Account Number</th>
 
 				</tr>
 			</thead>
@@ -33,7 +35,8 @@
 						<td>${billPayment.paymentDate}</td>
 						<td>${billPayment.billId}</td>
 						<td>${billPayment.paidAmount}</td>
-
+						<td>${billPayment.meterId}</td>
+						<td>${billPayment.accountNumber}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
