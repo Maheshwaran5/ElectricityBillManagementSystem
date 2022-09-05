@@ -17,9 +17,6 @@ public class CustomerRegistrationService {
 		return customerRegisterRepository.save(customer);
 	}
 
-//	public CustomerRegistration findById(int id) {
-//		return customerRegisterRepository.findByCustomerRegistrationId(id);
-//	}
 
 	public List<CustomerRegistration> getCustomerRegistration() {
 		return customerRegisterRepository.findAll();

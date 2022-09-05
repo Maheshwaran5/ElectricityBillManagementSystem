@@ -32,14 +32,7 @@ public class CustomerService {
 	public void deleteById(int id) {
 		customerRepository.deleteById(id);
 	}
-//	 public CustomerBillDetailsDTO getCustomerBillDetails(long id) {
-//	        Customer customer = findById(id);
-//	        CustomerBillDetailsDTO dto = new CustomerBillDetailsDTO();
-//	        dto.setCustomer(customer);
-//	        BillDetails billDetails = billDetailsRepository.findByAccountNumber(customer.getAccountNumber());
-//	        dto.setBilldetails(billDetails);
-//	        return dto;
-//	    }
+
 	 public Customer getCustomerNamePassword(String name,String password) {
 	        return customerRepository.findByCustomerNameAndPassword(name, password);
 	    }
