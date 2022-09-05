@@ -12,4 +12,5 @@ public interface BillPaymentRepository extends CrudRepository<BillPayment,Intege
     void deleteById(int id);
     List <BillPayment> findAll();
     List <BillPayment> findByMeterId(long id);
+	BillPayment findByBillIdAndMeterId(int id, long mid);
 }

@@ -41,10 +41,6 @@ public class BillPaymentController {
 		HttpSession session = request.getSession();
 		long meterId = (long)session.getAttribute("meterId");
 		thebillpayment.setMeterId(meterId);
-//		int billId=Integer.parseInt(id);
-//		BillDetails billDetails=billDetailService.findById(billId);
-//		thebillpayment.setBillId(billDetails.getBillId());
-//		thebillpayment.setPaidAmount(billDetails.getBillAmount());
 		model.addAttribute("addbillpayment", thebillpayment);
 		return "add-billpayment-form";
 	}
@@ -56,18 +52,15 @@ public class BillPaymentController {
 	}
 	
 	@GetMapping("/addpaymentform")
-	public String showAddFoorm(@RequestParam("id")long id,Model model,HttpServletRequest request) {
+	public String showAddFoorm(@RequestParam("id")int id,@RequestParam("mid")long mid,Model model,HttpServletRequest request) {
 		BillPayment thebillpayment = new BillPayment();
 		HttpSession session = request.getSession();
 		long meterId = (long)session.getAttribute("meterId");
 		thebillpayment.setMeterId(meterId);
 		int billId =(int) session.getAttribute("billId");
 		thebillpayment.setBillId(billId);
-//		System.out.println(billId);
-//		int billId=Integer.parseInt(id);
-//		BillDetails billDetails=billDetailService.findById(billId);
-//		thebillpayment.setBillId(billDetails.getBillId());
-//		thebillpayment.setPaidAmount(billDetails.getBillAmount());
+//		 BillPayment thebill = billPaymentService.fetchBybillIdAndmeterId(id,mid);
+//		 System.out.println(thebill);
 		model.addAttribute("addbillpayment", thebillpayment);
 		return "add-billpayment-form";
 	}

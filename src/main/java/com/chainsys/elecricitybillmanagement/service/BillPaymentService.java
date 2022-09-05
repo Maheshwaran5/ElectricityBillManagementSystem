@@ -33,4 +33,7 @@ public class BillPaymentService {
 	public void deleteById(int id) {
 		billPaymentRepository.deleteById(id);
 	}
+	public BillPayment fetchBybillIdAndmeterId(int id, long mid) {
+		return billPaymentRepository.findByBillIdAndMeterId(id,mid);
+	}
 }

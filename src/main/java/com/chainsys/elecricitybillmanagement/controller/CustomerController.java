@@ -3,6 +3,7 @@ package com.chainsys.elecricitybillmanagement.controller;
 import java.util.List;
 
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.elecricitybillmanagement.dto.CustomerBillDetailsDTO;
 import com.chainsys.elecricitybillmanagement.model.BillDetails;
 import com.chainsys.elecricitybillmanagement.model.Customer;
 import com.chainsys.elecricitybillmanagement.service.CustomerService;
@@ -59,14 +59,6 @@ public class CustomerController {
 		model.addAttribute("getcustomer", customer);
 		return "get-customer-form";
 	}
-
-//	@GetMapping("/getbilldetails")
-//	public String getCustomerBillDetails(@RequestParam("id") long id, Model model) {
-//		CustomerBillDetailsDTO dto = customerService.getCustomerBillDetails(id);
-//		model.addAttribute("getcustomer", dto.getCustomer());
-//		model.addAttribute("getbilldetails", dto.getBilldetails());
-//		return "customer-billdetails";
-//	}
 
 	@GetMapping("/customerlogin")
 	public String adminaccessform(Model model) {

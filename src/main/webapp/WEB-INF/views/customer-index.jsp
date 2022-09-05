@@ -70,7 +70,7 @@
 						<td>${billdetails.unitConsumed}</td>
 						<td>${billdetails.billAmount}</td>
 						<td>${billdetails.meterId}</td>
-						<%-- <td><a href="/billpayment/addpaymentform?id=${billdetails.meterId}">Pay now</a></td> --%>
+					 <%-- <td><a href="/billpayment/addpaymentform?id=${billdetails.billId}&mid=${billdetails.meterId}">Pay now</a></td> --%> 
 					</tr>
 				</c:forEach>
 			</tbody>
