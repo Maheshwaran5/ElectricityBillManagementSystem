@@ -118,13 +118,6 @@ body {
 						name="aadhaarNumber" onblur="numberCheck();">
 				</div>
 
-				<!-- <div class="col-sm-3 form-group">
-					<label for="tel">Account Number</label> <input name="accountNumber"
-						title="Account no Missing 12 Numbers " type="tel" required="true"
-						pattern='[0-9]{12}' placeholder='Enter Account Number'
-						name="accountNumber" onblur="numberCheck();">
-				</div> -->
-
 				<div class="col-sm-3 form-group">
 					<label for="tel">Meter Id</label> <input type="tel" name="meterId"
 						class="form-control" id="tel"

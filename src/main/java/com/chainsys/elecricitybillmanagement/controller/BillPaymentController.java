@@ -59,8 +59,6 @@ public class BillPaymentController {
 		thebillpayment.setMeterId(meterId);
 		int billId =(int) session.getAttribute("billId");
 		thebillpayment.setBillId(billId);
-//		 BillPayment thebill = billPaymentService.fetchBybillIdAndmeterId(id,mid);
-//		 System.out.println(thebill);
 		model.addAttribute("addbillpayment", thebillpayment);
 		return "add-billpayment-form";
 	}

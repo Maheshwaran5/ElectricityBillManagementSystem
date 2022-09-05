@@ -25,7 +25,7 @@ import com.chainsys.elecricitybillmanagement.service.CustomerService;
 public class CustomerController {
 	@Autowired
 	CustomerService customerService;
-
+	private static final String ADDFORM="add-customer-form"; 
 	@GetMapping("/list")
 	public String getAllCustomer(Model model) {
 		List<Customer> cuslist = customerService.getCustomer();
@@ -37,7 +37,7 @@ public class CustomerController {
 	public String showAddForm(Model model,HttpServletRequest request) {
 		Customer thecustomer = new Customer();
 		model.addAttribute("addcustomer", thecustomer);
-		return "add-customer-form";
+		return ADDFORM;
 	}
 
 	@PostMapping("/add")
@@ -45,11 +45,11 @@ public class CustomerController {
 		try {
 			customerService.save(thecustomer);
 			model.addAttribute("result","Customer Added Successfully");
-			return "add-customer-form";
+			return ADDFORM;
 		}
 		catch(Exception er) {
 			model.addAttribute("error","Already Exists");
-			return "add-customer-form";
+			return ADDFORM;
 		}
 	}
 
